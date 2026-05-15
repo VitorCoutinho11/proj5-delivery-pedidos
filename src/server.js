@@ -1,55 +1,32 @@
 const restify = require("restify");
-
 const PedidosController = require("./controllers/pedidos.controller");
-
-console.log("Controller Pedidos carregado:", PedidosController);
+const { connectRabbitMQ } = require("./config/rabbitmq"); // Importe aqui
 
 const server = restify.createServer({
   name: "api-pedidos-restify"
 });
 
-// plugins
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
-/* =========================
-   ROTAS DE PEDIDOS
-========================= */
-
+/* Rotas permanecem as mesmas... */
 if (PedidosController && PedidosController.listar) {
-
-  // LISTAR TODOS
-  server.get("/pedidos", PedidosController.listar);
-
-  // BUSCAR POR ID
-  server.get("/pedidos/:id", PedidosController.buscarPorId);
-
-  // CRIAR
-  server.post("/pedidos", PedidosController.criar);
-
-  // ATUALIZAR
-  server.patch("/pedidos/:id", PedidosController.atualizar);
-
-  // DELETAR
-  server.del("/pedidos/:id", PedidosController.deletar);
-
-} else {
-
-  console.error(
-    "ERRO CRÍTICO: As funções do PedidosController não foram encontradas!"
-  );
-
-  process.exit(1);
+    server.get("/pedidos", PedidosController.listar);
+    server.get("/pedidos/:id", PedidosController.buscarPorId);
+    server.post("/pedidos", PedidosController.criar);
+    server.patch("/pedidos/:id", PedidosController.atualizar);
+    server.del("/pedidos/:id", PedidosController.deletar);
 }
-
-// tratamento global de erro
-server.on("restifyError", (req, res, err, callback) => {
-  console.error(err);
-  return callback();
-});
 
 const PORT = 3003;
 
-server.listen(PORT, () => {
-  console.log(`${server.name} rodando em ${server.url}`);
-});
+async function start() {
+  // Conecta ao RabbitMQ antes de abrir a porta do servidor
+  await connectRabbitMQ();
+
+  server.listen(PORT, () => {
+    console.log(`${server.name} rodando em ${server.url}`);
+  });
+}
+
+start();

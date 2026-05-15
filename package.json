@@ -1,24 +1,25 @@
 {
-  "name": "api-usuarios-restify",
+  "name": "delivery-pedido",
   "version": "1.0.0",
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "npx prisma generate && node src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@prisma/client": "^5.22.0",
-    "axios": "^1.15.2",
-    "dotenv": "^17.4.2",
+    "@prisma/client": "^6.19.3",
+    "amqplib": "^0.10.4",
+    "axios": "^1.6.0",
+    "dotenv": "^16.4.5",
     "node-fetch": "^3.3.2",
     "restify": "^11.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14",
-    "prisma": "^5.22.0"
+    "nodemon": "^3.1.0",
+    "prisma": "^6.19.3"
   }
 }
