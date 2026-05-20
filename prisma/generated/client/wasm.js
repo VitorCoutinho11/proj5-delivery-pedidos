@@ -131,7 +131,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\36129382024.1m\\Desktop\\proj5-delivery-pedidos\\prisma\\generated\\client",
+      "value": "C:\\Users\\Micro\\OneDrive\\Área de Trabalho\\proj5-delivery-pedidos\\prisma\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -149,7 +149,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\36129382024.1m\\Desktop\\proj5-delivery-pedidos\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\Micro\\OneDrive\\Área de Trabalho\\proj5-delivery-pedidos\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -172,8 +172,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated/client\"\n  binaryTargets = [\"native\", \"linux-musl-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Pedido {\n  pedido_id             Int      @id\n  usuario_id            Int\n  restaurante_id        Int\n  pedido_status         Int\n  pedido_valor_total    Float\n  pedido_criacao_pedido DateTime\n\n  itens ItemPedido[]\n\n  @@map(\"pedido\")\n}\n\nmodel ItemPedido {\n  item_pedido_id         Int   @id\n  item_pedido_quantidade Int\n  item_pedido_preco      Float\n  pedido_id              Int\n  prato_id               Int\n\n  pedido Pedido @relation(fields: [pedido_id], references: [pedido_id])\n\n  @@map(\"item_pedido\")\n}\n",
-  "inlineSchemaHash": "00f02d608014e1b1be5747d49e357bc16e3e1066fbbe7b8d86459522dcb0aa5d",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated/client\"\n  binaryTargets = [\"native\", \"linux-musl-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Pedido {\n  pedido_id             Int      @id @default(autoincrement())\n  usuario_id            Int\n  restaurante_id        Int\n  pedido_status         Int\n  pedido_valor_total    Float\n  pedido_criacao_pedido DateTime\n\n  itens ItemPedido[]\n\n  @@map(\"pedido\")\n}\n\nmodel ItemPedido {\n  item_pedido_id         Int   @id @default(autoincrement())\n  item_pedido_quantidade Int\n  item_pedido_preco      Float\n  pedido_id              Int\n  prato_id               Int\n\n  pedido Pedido @relation(fields: [pedido_id], references: [pedido_id])\n\n  @@map(\"item_pedido\")\n}\n",
+  "inlineSchemaHash": "07fb0a0e0d5fe94cb5a62a1c0b6f42b7ffc6c225d5312708f7b0a3a175ebff3b",
   "copyEngine": true
 }
 config.dirname = '/'

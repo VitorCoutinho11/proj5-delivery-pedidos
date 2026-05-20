@@ -16,12 +16,12 @@ datasource db {
 }
 
 model Pedido {
-  pedido_id               Int           @id
-  usuario_id              Int
-  restaurante_id          Int
-  pedido_status           Int
-  pedido_valor_total      Float
-  pedido_criacao_pedido   DateTime
+  pedido_id              Int           @id @default(autoincrement()) 
+  usuario_id             Int
+  restaurante_id         Int
+  pedido_status          Int
+  pedido_valor_total     Float
+  pedido_criacao_pedido  DateTime
 
   itens ItemPedido[]
 
@@ -29,11 +29,11 @@ model Pedido {
 }
 
 model ItemPedido {
-  item_pedido_id          Int      @id
-  item_pedido_quantidade  Int
-  item_pedido_preco       Float
-  pedido_id               Int
-  prato_id                Int
+  item_pedido_id         Int           @id @default(autoincrement()) 
+  item_pedido_quantidade Int
+  item_pedido_preco      Float
+  pedido_id              Int
+  prato_id               Int
 
   pedido Pedido @relation(fields: [pedido_id], references: [pedido_id])
 

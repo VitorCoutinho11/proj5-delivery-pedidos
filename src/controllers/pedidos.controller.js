@@ -12,9 +12,10 @@ class PedidosController {
         }
       });
 
-      return res.status(200).json(pedidos);
+      return res.send(200, pedidos);
+
     } catch (error) {
-      return res.status(500).json({
+      return res.send(500, {
         erro: "Erro ao listar pedidos",
         detalhes: error.message
       });
@@ -36,70 +37,68 @@ class PedidosController {
       });
 
       if (!pedido) {
-        return res.status(404).json({
+        return res.send(404, {
           erro: "Pedido não encontrado"
         });
       }
 
-      return res.status(200).json(pedido);
+      return res.send(200, pedido);
+
     } catch (error) {
-      return res.status(500).json({
+      return res.send(500, {
         erro: "Erro ao buscar pedido",
         detalhes: error.message
       });
     }
   }
 
-  // CRIAR PEDIDO
+  // CRIAR PEDIDO (Atualizado com Autoincremento e criação de itens aninhada)
   static async criar(req, res) {
     try {
       const {
-        pedido_id,
         usuario_id,
         restaurante_id,
         pedido_status,
         pedido_valor_total,
         pedido_criacao_pedido,
-        itens // Caso você envie os itens junto no POST
+        itens
       } = req.body;
 
-      // 1. Persistência no Banco de Dados
       const novoPedido = await prisma.pedido.create({
         data: {
-          pedido_id,
-          usuario_id,
-          restaurante_id,
-          pedido_status,
-          pedido_valor_total,
+          // pedido_id REMOVIDO: O MySQL assume o autoincremento nativo do banco
+          usuario_id: Number(usuario_id),
+          restaurante_id: Number(restaurante_id),
+          pedido_status: Number(pedido_status),
+          pedido_valor_total: Number(pedido_valor_total),
           pedido_criacao_pedido: new Date(pedido_criacao_pedido),
-          // Se houver itens, cria a relação automaticamente
-          itens: itens ? { create: itens } : undefined 
+          
+          // Criação dos itens atrelados automaticamente ao novo pedido
+          itens: itens && itens.length > 0 ? {
+            create: itens.map((item, index) => {
+              // Gerador de ID curto para a tabela de item_pedido
+              const agora = new Date();
+              const tempoCurto = `${agora.getMinutes()}${agora.getSeconds()}`;
+              const idDoItem = Math.floor(Number(`${tempoCurto}${index}${Math.floor(Math.random() * 9) + 1}`));
+
+              return {
+                item_pedido_id: idDoItem,
+                item_pedido_quantidade: Number(item.item_pedido_quantidade),
+                item_pedido_preco: Number(item.item_pedido_preco),
+                prato_id: Number(item.prato_id)
+              };
+            })
+          } : undefined
         },
-        include: { itens: true }
+        include: {
+          itens: true
+        }
       });
 
-      // 2. Mensageria (Notificar outros microsserviços)
-      const channel = getChannel();
-      if (channel) {
-        const mensagem = JSON.stringify({
-          event: "PEDIDO_CRIADO",
-          data: novoPedido,
-          timestamp: new Date()
-        });
-
-        // Enviamos para a fila 'fila_pedidos'
-        channel.sendToQueue('fila_pedidos', Buffer.from(mensagem), {
-          persistent: true // Mensagem sobrevive a reinícios do RabbitMQ
-        });
-
-        console.log(`[RabbitMQ] Pedido ${novoPedido.pedido_id} enviado para processamento.`);
-      }
-
-      return res.status(201).json(novoPedido);
+      return res.send(201, novoPedido);
 
     } catch (error) {
-      console.error("Erro ao processar pedido:", error);
-      return res.status(500).json({
+      return res.send(500, {
         erro: "Erro ao criar pedido",
         detalhes: error.message
       });
@@ -110,37 +109,44 @@ class PedidosController {
   static async atualizar(req, res) {
     try {
       const { id } = req.params;
-      const dadosAtualizacao = req.body;
+
+      const {
+        usuario_id,
+        restaurante_id,
+        pedido_status,
+        pedido_valor_total,
+        pedido_criacao_pedido
+      } = req.body;
 
       const pedidoExiste = await prisma.pedido.findUnique({
-        where: { pedido_id: Number(id) }
+        where: {
+          pedido_id: Number(id)
+        }
       });
 
       if (!pedidoExiste) {
-        return res.status(404).json({ erro: "Pedido não encontrado" });
-      }
-
-      // Ajuste para data caso ela venha na atualização
-      if (dadosAtualizacao.pedido_criacao_pedido) {
-        dadosAtualizacao.pedido_criacao_pedido = new Date(dadosAtualizacao.pedido_criacao_pedido);
+        return res.send(404, {
+          erro: "Pedido não encontrado"
+        });
       }
 
       const pedidoAtualizado = await prisma.pedido.update({
-        where: { pedido_id: Number(id) },
-        data: dadosAtualizacao,
-        include: { itens: true }
+        where: {
+          pedido_id: Number(id)
+        },
+        data: {
+          usuario_id: Number(usuario_id),
+          restaurante_id: Number(restaurante_id),
+          pedido_status: Number(pedido_status),
+          pedido_valor_total: Number(pedido_valor_total),
+          pedido_criacao_pedido: new Date(pedido_criacao_pedido)
+        }
       });
 
-      // Opcional: Notificar mudança de status (ex: de 'PENDENTE' para 'PREPARANDO')
-      const channel = getChannel();
-      if (channel && dadosAtualizacao.pedido_status) {
-        channel.sendToQueue('fila_status_pedidos', Buffer.from(JSON.stringify(pedidoAtualizado)));
-      }
-
-      return res.status(200).json(pedidoAtualizado);
+      return res.send(200, pedidoAtualizado);
 
     } catch (error) {
-      return res.status(500).json({
+      return res.send(500, {
         erro: "Erro ao atualizar pedido",
         detalhes: error.message
       });
@@ -153,28 +159,35 @@ class PedidosController {
       const { id } = req.params;
 
       const pedidoExiste = await prisma.pedido.findUnique({
-        where: { pedido_id: Number(id) }
+        where: {
+          pedido_id: Number(id)
+        }
       });
 
       if (!pedidoExiste) {
-        return res.status(404).json({ erro: "Pedido não encontrado" });
+        return res.send(404, {
+          erro: "Pedido não encontrado"
+        });
       }
 
       await prisma.pedido.delete({
-        where: { pedido_id: Number(id) }
+        where: {
+          pedido_id: Number(id)
+        }
       });
 
-      return res.status(200).json({
+      return res.send(200, {
         mensagem: "Pedido deletado com sucesso"
       });
 
     } catch (error) {
-      return res.status(500).json({
+      return res.send(500, {
         erro: "Erro ao deletar pedido",
         detalhes: error.message
       });
     }
   }
+
 }
 
 module.exports = PedidosController;

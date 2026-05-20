@@ -3155,7 +3155,6 @@ export namespace Prisma {
   }
 
   export type PedidoCreateInput = {
-    pedido_id: number
     usuario_id: number
     restaurante_id: number
     pedido_status: number
@@ -3165,7 +3164,7 @@ export namespace Prisma {
   }
 
   export type PedidoUncheckedCreateInput = {
-    pedido_id: number
+    pedido_id?: number
     usuario_id: number
     restaurante_id: number
     pedido_status: number
@@ -3175,7 +3174,6 @@ export namespace Prisma {
   }
 
   export type PedidoUpdateInput = {
-    pedido_id?: IntFieldUpdateOperationsInput | number
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
     pedido_status?: IntFieldUpdateOperationsInput | number
@@ -3195,7 +3193,7 @@ export namespace Prisma {
   }
 
   export type PedidoCreateManyInput = {
-    pedido_id: number
+    pedido_id?: number
     usuario_id: number
     restaurante_id: number
     pedido_status: number
@@ -3204,7 +3202,6 @@ export namespace Prisma {
   }
 
   export type PedidoUpdateManyMutationInput = {
-    pedido_id?: IntFieldUpdateOperationsInput | number
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
     pedido_status?: IntFieldUpdateOperationsInput | number
@@ -3222,7 +3219,6 @@ export namespace Prisma {
   }
 
   export type ItemPedidoCreateInput = {
-    item_pedido_id: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
@@ -3230,7 +3226,7 @@ export namespace Prisma {
   }
 
   export type ItemPedidoUncheckedCreateInput = {
-    item_pedido_id: number
+    item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     pedido_id: number
@@ -3238,7 +3234,6 @@ export namespace Prisma {
   }
 
   export type ItemPedidoUpdateInput = {
-    item_pedido_id?: IntFieldUpdateOperationsInput | number
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
     prato_id?: IntFieldUpdateOperationsInput | number
@@ -3254,7 +3249,7 @@ export namespace Prisma {
   }
 
   export type ItemPedidoCreateManyInput = {
-    item_pedido_id: number
+    item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     pedido_id: number
@@ -3262,7 +3257,6 @@ export namespace Prisma {
   }
 
   export type ItemPedidoUpdateManyMutationInput = {
-    item_pedido_id?: IntFieldUpdateOperationsInput | number
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
     prato_id?: IntFieldUpdateOperationsInput | number
@@ -3609,14 +3603,13 @@ export namespace Prisma {
   }
 
   export type ItemPedidoCreateWithoutPedidoInput = {
-    item_pedido_id: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
   }
 
   export type ItemPedidoUncheckedCreateWithoutPedidoInput = {
-    item_pedido_id: number
+    item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
@@ -3660,7 +3653,6 @@ export namespace Prisma {
   }
 
   export type PedidoCreateWithoutItensInput = {
-    pedido_id: number
     usuario_id: number
     restaurante_id: number
     pedido_status: number
@@ -3669,7 +3661,7 @@ export namespace Prisma {
   }
 
   export type PedidoUncheckedCreateWithoutItensInput = {
-    pedido_id: number
+    pedido_id?: number
     usuario_id: number
     restaurante_id: number
     pedido_status: number
@@ -3694,7 +3686,6 @@ export namespace Prisma {
   }
 
   export type PedidoUpdateWithoutItensInput = {
-    pedido_id?: IntFieldUpdateOperationsInput | number
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
     pedido_status?: IntFieldUpdateOperationsInput | number
@@ -3712,14 +3703,13 @@ export namespace Prisma {
   }
 
   export type ItemPedidoCreateManyPedidoInput = {
-    item_pedido_id: number
+    item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
   }
 
   export type ItemPedidoUpdateWithoutPedidoInput = {
-    item_pedido_id?: IntFieldUpdateOperationsInput | number
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
     prato_id?: IntFieldUpdateOperationsInput | number

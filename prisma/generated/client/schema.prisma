@@ -16,7 +16,7 @@ datasource db {
 }
 
 model Pedido {
-  pedido_id             Int      @id
+  pedido_id             Int      @id @default(autoincrement())
   usuario_id            Int
   restaurante_id        Int
   pedido_status         Int
@@ -29,7 +29,7 @@ model Pedido {
 }
 
 model ItemPedido {
-  item_pedido_id         Int   @id
+  item_pedido_id         Int   @id @default(autoincrement())
   item_pedido_quantidade Int
   item_pedido_preco      Float
   pedido_id              Int
