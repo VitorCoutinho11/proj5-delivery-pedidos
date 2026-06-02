@@ -1,5 +1,5 @@
 const prisma = require("../config/prisma");
-const { getChannel } = require("../config/rabbitmq");
+const { enviarParaFila } = require("../config/rabbitmq");
 
 class PedidosController {
 
@@ -52,7 +52,7 @@ class PedidosController {
     }
   }
 
-  // CRIAR PEDIDO (Atualizado com Autoincremento e criação de itens aninhada)
+  // CRIAR PEDIDO (Atualizado com Autoincremento, criação de itens aninhada e RabbitMQ)
   static async criar(req, res) {
     try {
       const {
@@ -95,6 +95,9 @@ class PedidosController {
         }
       });
 
+      // INTEGRAÇÃO RABBITMQ: Dispara os dados do novo pedido para a fila
+      enviarParaFila('delivery_pedidos', novoPedido);
+
       return res.send(201, novoPedido);
 
     } catch (error) {
@@ -106,7 +109,7 @@ class PedidosController {
   }
 
   // ATUALIZAR PEDIDO
-  static async atualizar(req, res) {
+  static async actualizar(req, res) {
     try {
       const { id } = req.params;
 
