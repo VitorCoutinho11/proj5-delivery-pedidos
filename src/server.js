@@ -9,6 +9,16 @@ const server = restify.createServer({
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
+/* Rota de Healthcheck para o Docker / Jenkins */
+server.get("/health", (req, res, next) => {
+  res.send(200, { 
+    status: "UP", 
+    timestamp: new Date(),
+    uptime: process.uptime() 
+  });
+  return next();
+});
+
 /* Mapeamento de Rotas com Validação Segura */
 if (PedidosController) {
   if (typeof PedidosController.listar === "function") {
