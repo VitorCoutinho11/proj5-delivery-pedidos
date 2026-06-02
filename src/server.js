@@ -18,7 +18,7 @@ if (PedidosController && PedidosController.listar) {
     server.del("/pedidos/:id", PedidosController.deletar);
 }
 
-const PORT = 9524;
+const PORT = 9523;
 
 async function start() {
   // Conecta ao RabbitMQ antes de abrir a porta do servidor

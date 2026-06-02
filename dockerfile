@@ -25,7 +25,7 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package.json ./package.json
 
 # Porta exposta (definida no docker-compose via PORT env)
-EXPOSE 9524
+EXPOSE 9523
 
 # Health check interno do Docker
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
