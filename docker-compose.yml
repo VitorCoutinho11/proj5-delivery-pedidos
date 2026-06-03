@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: delivery-pedidos-api
+    container_name: delivery-pedidos
     restart: unless-stopped
 
     ports:
