@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   delivery-pedidos:
     build:
@@ -6,22 +8,22 @@ services:
     container_name: delivery-pedidos-container
     restart: unless-stopped
 
-    # CRUCIAL: Chama o script do package.json que gera o Prisma no boot
-    command: npm start
-
     ports:
       - "9523:9523"
 
     environment:
       PORT: 9523
       NODE_ENV: production
-      # Banco de Dados
-      DATABASE_URL: mysql://20261_projint5_manha:senac@12938@edumysql.acesso.rj.senac.br:3306/20261_projint5_manha_delivery_pedidos
-      # RabbitMQ
-      RABBITMQ_URL: amqp://admin:admin@10.136.38.50:5672
-      RABBITMQ_RECONNECT_DELAY: 5000
-      # Negócio
-      TAXA_ENTREGA_BASE: 5.00
+
+      # Banco de Dados — puxa direto do arquivo .env
+      DATABASE_URL: ${DATABASE_URL}
+
+      # RabbitMQ (com valor padrão caso não encontre no .env)
+      RABBITMQ_URL: ${RABBITMQ_URL:-amqp://admin:admin@10.136.38.50:5672}
+      RABBITMQ_RECONNECT_DELAY: ${RABBITMQ_RECONNECT_DELAY:-5000}
+
+      # Regras de Negócio
+      TAXA_ENTREGA_BASE: ${TAXA_ENTREGA_BASE:-5.00}
 
     networks:
       - delivery-net

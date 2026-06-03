@@ -31,11 +31,11 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package.json ./package.json
 
 # Porta exposta
-EXPOSE 9523
+ENV PORT = 9523
+EXPOSE $9523
 
-# Health check usando o próprio Node para bater na porta CORRETA (9523)
-# Isso elimina a dependência do wget/curl e evita falsos negativos na pipeline
+# Health check usando o próprio Node para bater na porta dinâmica do ambiente
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
-  CMD node -e "const http = require('http'); const req = http.request('http://localhost:9523/health', { timeout: 2000 }, (res) => process.exit(res.statusCode === 200 ? 0 : 1)); req.on('error', () => process.exit(1)); req.end();"
+  CMD node -e "const http = require('http'); const req = http.request(\`http://localhost:\${process.env.PORT || 9523}/health\`, { timeout: 2000 }, (res) => process.exit(res.statusCode === 200 ? 0 : 1)); req.on('error', () => process.exit(1)); req.end();"
 
 CMD ["node", "src/server.js"]
