@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // Nome da imagem e do container baseados no seu projeto
-        IMAGE_NAME = "microservico-pedido"
-        CONTAINER_NAME = "microservico-pedido-container"
+        IMAGE_NAME = "delivery-pedidos"
+        CONTAINER_NAME = "delivery-pedidos"
         // Porta que o seu Fastify utiliza
         APP_PORT = "9523"
     }
