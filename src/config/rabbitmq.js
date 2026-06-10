@@ -6,7 +6,10 @@ let connection;
 async function connectRabbitMQ() {
     try {
         // Se não encontrar a variável no .env, usa o padrão admin:admin para o IP do SENAC
-        const rabbitmqUrl = process.env.RABBITMQ_URL || 'amqp://admin:admin@10.136.38.50:5672';
+        const rabbitmqUrl = process.env.RABBITMQ_URL;
+        if (!rabbitmqUrl) {
+            throw new Error('Variável de ambiente RABBITMQ_URL não definida. Verifique o .env.');
+        }
         
         connection = await amqp.connect(rabbitmqUrl);
         channel = await connection.createChannel();

@@ -132,7 +132,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Micro\\OneDrive\\Área de Trabalho\\proj5-delivery-pedidos\\prisma\\generated\\client",
+      "value": "C:\\Users\\36129382024.1m\\Desktop\\proj5-delivery-pedidos\\prisma\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -150,7 +150,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\Micro\\OneDrive\\Área de Trabalho\\proj5-delivery-pedidos\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\36129382024.1m\\Desktop\\proj5-delivery-pedidos\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

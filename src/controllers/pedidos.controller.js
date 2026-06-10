@@ -67,20 +67,13 @@ async function criar(req, res) {
         pedido_status: Number(pedido_status),
         pedido_valor_total: Number(pedido_valor_total),
         pedido_criacao_pedido: new Date(pedido_criacao_pedido),
-        
-        itens: itens && itens.length > 0 ? {
-          create: itens.map((item, index) => {
-            const agora = new Date();
-            const tempoCurto = `${agora.getMinutes()}${agora.getSeconds()}`;
-            const idDoItem = Math.floor(Number(`${tempoCurto}${index}${Math.floor(Math.random() * 9) + 1}`));
 
-            return {
-              item_pedido_id: idDoItem,
-              item_pedido_quantidade: Number(item.item_pedido_quantidade),
-              item_pedido_preco: Number(item.item_pedido_preco),
-              prato_id: Number(item.prato_id)
-            };
-          })
+        itens: itens && itens.length > 0 ? {
+          create: itens.map((item) => ({
+            item_pedido_quantidade: Number(item.item_pedido_quantidade),
+            item_pedido_preco: Number(item.item_pedido_preco),
+            prato_id: Number(item.prato_id)
+          }))
         } : undefined
       },
       include: {
@@ -88,7 +81,6 @@ async function criar(req, res) {
       }
     });
 
-    // INTEGRAÇÃO RABBITMQ: Dispara os dados do novo pedido para a fila
     enviarParaFila('delivery_pedidos', novoPedido);
 
     return res.send(201, novoPedido);
@@ -181,7 +173,6 @@ async function deletar(req, res) {
   }
 }
 
-// Exportação explícita como um objeto contendo todas as funções
 module.exports = {
   listar,
   buscarPorId,
