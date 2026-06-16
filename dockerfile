@@ -31,8 +31,8 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package.json ./package.json
 
 # Porta exposta
-ENV PORT = 9523
-EXPOSE $9523
+ENV PORT=9523
+EXPOSE 9523
 
 # Health check usando o próprio Node para bater na porta dinâmica do ambiente
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
