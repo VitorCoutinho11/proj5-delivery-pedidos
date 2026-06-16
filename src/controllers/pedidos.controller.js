@@ -156,6 +156,15 @@ async function deletar(req, res) {
       });
     }
 
+    // PASSO 1: Deletar os itens do pedido primeiro
+    // Obs: Confirme se o nome do model de itens no seu Prisma é 'itemPedido' (com inicial minúscula aqui)
+    await prisma.itemPedido.deleteMany({
+      where: {
+        pedido_id: Number(id)
+      }
+    });
+
+    // PASSO 2: Agora sim, deletar o pedido
     await prisma.pedido.delete({
       where: {
         pedido_id: Number(id)
