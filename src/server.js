@@ -1,6 +1,7 @@
 const restify = require("restify");
 const PedidosController = require("./controllers/pedidos.controller");
 const { connectRabbitMQ } = require("./config/rabbitmq");
+const { loadSecrets } = require("./config/infisical");
 
 const server = restify.createServer({
   name: "api-pedidos-restify"
@@ -46,6 +47,9 @@ const PORT = 9523;
 
 async function start() {
   try {
+    // Carrega variáveis do Infisical primeiro
+    await loadSecrets();
+
     // Conecta ao RabbitMQ antes de abrir a porta do servidor
     await connectRabbitMQ();
     console.log("Conectado ao RabbitMQ com sucesso.");
