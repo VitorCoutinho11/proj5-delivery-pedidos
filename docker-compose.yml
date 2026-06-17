@@ -15,6 +15,12 @@ services:
       PORT: 9523
       NODE_ENV: production
 
+      # Autenticação Universal do Infisical (Machine Identity)
+      CLIENT_ID:            ${CLIENT_ID:-d5c10fba-9397-4862-9875-ecc66a3a2ba2}
+      CLIENT_SECRET:        ${CLIENT_SECRET:-25bb4324c295704f26498e75f5ab6e51d177d23409cf7d23c738e769d86f866b}
+      INFISICAL_PROJECT_ID: ${INFISICAL_PROJECT_ID:-a4e361bc-4ac8-4d10-9e09-3746b864e0fa}
+      INFISICAL_ENV:        ${INFISICAL_ENV:-dev}
+
       # Banco de Dados — puxa direto do arquivo .env
       DATABASE_URL: ${DATABASE_URL}
 
