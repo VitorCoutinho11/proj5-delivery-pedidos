@@ -10,10 +10,10 @@ const INFISICAL_PROJECT_ID = process.env.INFISICAL_PROJECT_ID || 'a4e361bc-4ac8-
 const INFISICAL_ENV        = process.env.INFISICAL_ENV        || 'prod';
  
 async function loadSecrets() {
-  if (process.env.NODE_ENV !== 'production') {
-    console.log('[Infisical] NODE_ENV !== production — usando variáveis locais (.env)');
-    return;
-  }
+  // if (process.env.NODE_ENV !== 'production') {
+  //   console.log('[Infisical] NODE_ENV !== production — usando variáveis locais (.env)');
+  //   return;
+  // }
  
   try {
     console.log(`[Infisical] Conectando... projeto: ${INFISICAL_PROJECT_ID} | ambiente: ${INFISICAL_ENV}`);
