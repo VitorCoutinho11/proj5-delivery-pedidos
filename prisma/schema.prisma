@@ -15,7 +15,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Pedido {
+model pedido {
   pedido_id              Int           @id @default(autoincrement()) 
   usuario_id             Int
   restaurante_id         Int
@@ -28,7 +28,7 @@ model Pedido {
   @@map("pedido")
 }
 
-model ItemPedido {
+model Itempedido {
   item_pedido_id         Int           @id @default(autoincrement()) 
   item_pedido_quantidade Int
   item_pedido_preco      Float
