@@ -14,15 +14,15 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Pedido
+ * Model pedido
  * 
  */
-export type Pedido = $Result.DefaultSelection<Prisma.$PedidoPayload>
+export type pedido = $Result.DefaultSelection<Prisma.$pedidoPayload>
 /**
- * Model ItemPedido
+ * Model item_pedido
  * 
  */
-export type ItemPedido = $Result.DefaultSelection<Prisma.$ItemPedidoPayload>
+export type item_pedido = $Result.DefaultSelection<Prisma.$item_pedidoPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -143,24 +143,24 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.pedido`: Exposes CRUD operations for the **Pedido** model.
+   * `prisma.pedido`: Exposes CRUD operations for the **pedido** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Pedidos
     * const pedidos = await prisma.pedido.findMany()
     * ```
     */
-  get pedido(): Prisma.PedidoDelegate<ExtArgs, ClientOptions>;
+  get pedido(): Prisma.pedidoDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.itemPedido`: Exposes CRUD operations for the **ItemPedido** model.
+   * `prisma.item_pedido`: Exposes CRUD operations for the **item_pedido** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more ItemPedidos
-    * const itemPedidos = await prisma.itemPedido.findMany()
+    * // Fetch zero or more Item_pedidos
+    * const item_pedidos = await prisma.item_pedido.findMany()
     * ```
     */
-  get itemPedido(): Prisma.ItemPedidoDelegate<ExtArgs, ClientOptions>;
+  get item_pedido(): Prisma.item_pedidoDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -602,8 +602,8 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Pedido: 'Pedido',
-    ItemPedido: 'ItemPedido'
+    pedido: 'pedido',
+    item_pedido: 'item_pedido'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -622,139 +622,139 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "pedido" | "itemPedido"
+      modelProps: "pedido" | "item_pedido"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Pedido: {
-        payload: Prisma.$PedidoPayload<ExtArgs>
-        fields: Prisma.PedidoFieldRefs
+      pedido: {
+        payload: Prisma.$pedidoPayload<ExtArgs>
+        fields: Prisma.pedidoFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.PedidoFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload> | null
+            args: Prisma.pedidoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.PedidoFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload>
+            args: Prisma.pedidoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload>
           }
           findFirst: {
-            args: Prisma.PedidoFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload> | null
+            args: Prisma.pedidoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.PedidoFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload>
+            args: Prisma.pedidoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload>
           }
           findMany: {
-            args: Prisma.PedidoFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload>[]
+            args: Prisma.pedidoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload>[]
           }
           create: {
-            args: Prisma.PedidoCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload>
+            args: Prisma.pedidoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload>
           }
           createMany: {
-            args: Prisma.PedidoCreateManyArgs<ExtArgs>
+            args: Prisma.pedidoCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.PedidoDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload>
+            args: Prisma.pedidoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload>
           }
           update: {
-            args: Prisma.PedidoUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload>
+            args: Prisma.pedidoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload>
           }
           deleteMany: {
-            args: Prisma.PedidoDeleteManyArgs<ExtArgs>
+            args: Prisma.pedidoDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.PedidoUpdateManyArgs<ExtArgs>
+            args: Prisma.pedidoUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.PedidoUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PedidoPayload>
+            args: Prisma.pedidoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$pedidoPayload>
           }
           aggregate: {
             args: Prisma.PedidoAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregatePedido>
           }
           groupBy: {
-            args: Prisma.PedidoGroupByArgs<ExtArgs>
+            args: Prisma.pedidoGroupByArgs<ExtArgs>
             result: $Utils.Optional<PedidoGroupByOutputType>[]
           }
           count: {
-            args: Prisma.PedidoCountArgs<ExtArgs>
+            args: Prisma.pedidoCountArgs<ExtArgs>
             result: $Utils.Optional<PedidoCountAggregateOutputType> | number
           }
         }
       }
-      ItemPedido: {
-        payload: Prisma.$ItemPedidoPayload<ExtArgs>
-        fields: Prisma.ItemPedidoFieldRefs
+      item_pedido: {
+        payload: Prisma.$item_pedidoPayload<ExtArgs>
+        fields: Prisma.item_pedidoFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ItemPedidoFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload> | null
+            args: Prisma.item_pedidoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ItemPedidoFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload>
+            args: Prisma.item_pedidoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload>
           }
           findFirst: {
-            args: Prisma.ItemPedidoFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload> | null
+            args: Prisma.item_pedidoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ItemPedidoFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload>
+            args: Prisma.item_pedidoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload>
           }
           findMany: {
-            args: Prisma.ItemPedidoFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload>[]
+            args: Prisma.item_pedidoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload>[]
           }
           create: {
-            args: Prisma.ItemPedidoCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload>
+            args: Prisma.item_pedidoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload>
           }
           createMany: {
-            args: Prisma.ItemPedidoCreateManyArgs<ExtArgs>
+            args: Prisma.item_pedidoCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.ItemPedidoDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload>
+            args: Prisma.item_pedidoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload>
           }
           update: {
-            args: Prisma.ItemPedidoUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload>
+            args: Prisma.item_pedidoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload>
           }
           deleteMany: {
-            args: Prisma.ItemPedidoDeleteManyArgs<ExtArgs>
+            args: Prisma.item_pedidoDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.ItemPedidoUpdateManyArgs<ExtArgs>
+            args: Prisma.item_pedidoUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.ItemPedidoUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ItemPedidoPayload>
+            args: Prisma.item_pedidoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$item_pedidoPayload>
           }
           aggregate: {
-            args: Prisma.ItemPedidoAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateItemPedido>
+            args: Prisma.Item_pedidoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateItem_pedido>
           }
           groupBy: {
-            args: Prisma.ItemPedidoGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ItemPedidoGroupByOutputType>[]
+            args: Prisma.item_pedidoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Item_pedidoGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ItemPedidoCountArgs<ExtArgs>
-            result: $Utils.Optional<ItemPedidoCountAggregateOutputType> | number
+            args: Prisma.item_pedidoCountArgs<ExtArgs>
+            result: $Utils.Optional<Item_pedidoCountAggregateOutputType> | number
           }
         }
       }
@@ -854,8 +854,8 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    pedido?: PedidoOmit
-    itemPedido?: ItemPedidoOmit
+    pedido?: pedidoOmit
+    item_pedido?: item_pedidoOmit
   }
 
   /* Types for Logging */
@@ -958,7 +958,7 @@ export namespace Prisma {
    * PedidoCountOutputType without action
    */
   export type PedidoCountOutputTypeCountItensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ItemPedidoWhereInput
+    where?: item_pedidoWhereInput
   }
 
 
@@ -967,7 +967,7 @@ export namespace Prisma {
    */
 
   /**
-   * Model Pedido
+   * Model pedido
    */
 
   export type AggregatePedido = {
@@ -1069,37 +1069,37 @@ export namespace Prisma {
 
   export type PedidoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Pedido to aggregate.
+     * Filter which pedido to aggregate.
      */
-    where?: PedidoWhereInput
+    where?: pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pedidos to fetch.
+     * Determine the order of pedidos to fetch.
      */
-    orderBy?: PedidoOrderByWithRelationInput | PedidoOrderByWithRelationInput[]
+    orderBy?: pedidoOrderByWithRelationInput | pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: PedidoWhereUniqueInput
+    cursor?: pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pedidos from the position of the cursor.
+     * Take `±n` pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pedidos.
+     * Skip the first `n` pedidos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Pedidos
+     * Count returned pedidos
     **/
     _count?: true | PedidoCountAggregateInputType
     /**
@@ -1139,11 +1139,11 @@ export namespace Prisma {
 
 
 
-  export type PedidoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PedidoWhereInput
-    orderBy?: PedidoOrderByWithAggregationInput | PedidoOrderByWithAggregationInput[]
+  export type pedidoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: pedidoWhereInput
+    orderBy?: pedidoOrderByWithAggregationInput | pedidoOrderByWithAggregationInput[]
     by: PedidoScalarFieldEnum[] | PedidoScalarFieldEnum
-    having?: PedidoScalarWhereWithAggregatesInput
+    having?: pedidoScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: PedidoCountAggregateInputType | true
@@ -1167,7 +1167,7 @@ export namespace Prisma {
     _max: PedidoMaxAggregateOutputType | null
   }
 
-  type GetPedidoGroupByPayload<T extends PedidoGroupByArgs> = Prisma.PrismaPromise<
+  type GetPedidoGroupByPayload<T extends pedidoGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<PedidoGroupByOutputType, T['by']> &
         {
@@ -1181,20 +1181,20 @@ export namespace Prisma {
     >
 
 
-  export type PedidoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type pedidoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     pedido_id?: boolean
     usuario_id?: boolean
     restaurante_id?: boolean
     pedido_status?: boolean
     pedido_valor_total?: boolean
     pedido_criacao_pedido?: boolean
-    itens?: boolean | Pedido$itensArgs<ExtArgs>
+    itens?: boolean | pedido$itensArgs<ExtArgs>
     _count?: boolean | PedidoCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["pedido"]>
 
 
 
-  export type PedidoSelectScalar = {
+  export type pedidoSelectScalar = {
     pedido_id?: boolean
     usuario_id?: boolean
     restaurante_id?: boolean
@@ -1203,16 +1203,16 @@ export namespace Prisma {
     pedido_criacao_pedido?: boolean
   }
 
-  export type PedidoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"pedido_id" | "usuario_id" | "restaurante_id" | "pedido_status" | "pedido_valor_total" | "pedido_criacao_pedido", ExtArgs["result"]["pedido"]>
-  export type PedidoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    itens?: boolean | Pedido$itensArgs<ExtArgs>
+  export type pedidoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"pedido_id" | "usuario_id" | "restaurante_id" | "pedido_status" | "pedido_valor_total" | "pedido_criacao_pedido", ExtArgs["result"]["pedido"]>
+  export type pedidoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    itens?: boolean | pedido$itensArgs<ExtArgs>
     _count?: boolean | PedidoCountOutputTypeDefaultArgs<ExtArgs>
   }
 
-  export type $PedidoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Pedido"
+  export type $pedidoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "pedido"
     objects: {
-      itens: Prisma.$ItemPedidoPayload<ExtArgs>[]
+      itens: Prisma.$item_pedidoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       pedido_id: number
@@ -1225,18 +1225,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type PedidoGetPayload<S extends boolean | null | undefined | PedidoDefaultArgs> = $Result.GetResult<Prisma.$PedidoPayload, S>
+  type pedidoGetPayload<S extends boolean | null | undefined | pedidoDefaultArgs> = $Result.GetResult<Prisma.$pedidoPayload, S>
 
-  type PedidoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PedidoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type pedidoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<pedidoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: PedidoCountAggregateInputType | true
     }
 
-  export interface PedidoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Pedido'], meta: { name: 'Pedido' } }
+  export interface pedidoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['pedido'], meta: { name: 'pedido' } }
     /**
      * Find zero or one Pedido that matches the filter.
-     * @param {PedidoFindUniqueArgs} args - Arguments to find a Pedido
+     * @param {pedidoFindUniqueArgs} args - Arguments to find a Pedido
      * @example
      * // Get one Pedido
      * const pedido = await prisma.pedido.findUnique({
@@ -1245,12 +1245,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends PedidoFindUniqueArgs>(args: SelectSubset<T, PedidoFindUniqueArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends pedidoFindUniqueArgs>(args: SelectSubset<T, pedidoFindUniqueArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Pedido that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {PedidoFindUniqueOrThrowArgs} args - Arguments to find a Pedido
+     * @param {pedidoFindUniqueOrThrowArgs} args - Arguments to find a Pedido
      * @example
      * // Get one Pedido
      * const pedido = await prisma.pedido.findUniqueOrThrow({
@@ -1259,13 +1259,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends PedidoFindUniqueOrThrowArgs>(args: SelectSubset<T, PedidoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends pedidoFindUniqueOrThrowArgs>(args: SelectSubset<T, pedidoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Pedido that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PedidoFindFirstArgs} args - Arguments to find a Pedido
+     * @param {pedidoFindFirstArgs} args - Arguments to find a Pedido
      * @example
      * // Get one Pedido
      * const pedido = await prisma.pedido.findFirst({
@@ -1274,14 +1274,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends PedidoFindFirstArgs>(args?: SelectSubset<T, PedidoFindFirstArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends pedidoFindFirstArgs>(args?: SelectSubset<T, pedidoFindFirstArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Pedido that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PedidoFindFirstOrThrowArgs} args - Arguments to find a Pedido
+     * @param {pedidoFindFirstOrThrowArgs} args - Arguments to find a Pedido
      * @example
      * // Get one Pedido
      * const pedido = await prisma.pedido.findFirstOrThrow({
@@ -1290,13 +1290,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends PedidoFindFirstOrThrowArgs>(args?: SelectSubset<T, PedidoFindFirstOrThrowArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends pedidoFindFirstOrThrowArgs>(args?: SelectSubset<T, pedidoFindFirstOrThrowArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Pedidos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PedidoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {pedidoFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Pedidos
      * const pedidos = await prisma.pedido.findMany()
@@ -1308,11 +1308,11 @@ export namespace Prisma {
      * const pedidoWithPedido_idOnly = await prisma.pedido.findMany({ select: { pedido_id: true } })
      * 
      */
-    findMany<T extends PedidoFindManyArgs>(args?: SelectSubset<T, PedidoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends pedidoFindManyArgs>(args?: SelectSubset<T, pedidoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Pedido.
-     * @param {PedidoCreateArgs} args - Arguments to create a Pedido.
+     * @param {pedidoCreateArgs} args - Arguments to create a Pedido.
      * @example
      * // Create one Pedido
      * const Pedido = await prisma.pedido.create({
@@ -1322,11 +1322,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends PedidoCreateArgs>(args: SelectSubset<T, PedidoCreateArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends pedidoCreateArgs>(args: SelectSubset<T, pedidoCreateArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Pedidos.
-     * @param {PedidoCreateManyArgs} args - Arguments to create many Pedidos.
+     * @param {pedidoCreateManyArgs} args - Arguments to create many Pedidos.
      * @example
      * // Create many Pedidos
      * const pedido = await prisma.pedido.createMany({
@@ -1336,11 +1336,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends PedidoCreateManyArgs>(args?: SelectSubset<T, PedidoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends pedidoCreateManyArgs>(args?: SelectSubset<T, pedidoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Pedido.
-     * @param {PedidoDeleteArgs} args - Arguments to delete one Pedido.
+     * @param {pedidoDeleteArgs} args - Arguments to delete one Pedido.
      * @example
      * // Delete one Pedido
      * const Pedido = await prisma.pedido.delete({
@@ -1350,11 +1350,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends PedidoDeleteArgs>(args: SelectSubset<T, PedidoDeleteArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends pedidoDeleteArgs>(args: SelectSubset<T, pedidoDeleteArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Pedido.
-     * @param {PedidoUpdateArgs} args - Arguments to update one Pedido.
+     * @param {pedidoUpdateArgs} args - Arguments to update one Pedido.
      * @example
      * // Update one Pedido
      * const pedido = await prisma.pedido.update({
@@ -1367,11 +1367,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends PedidoUpdateArgs>(args: SelectSubset<T, PedidoUpdateArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends pedidoUpdateArgs>(args: SelectSubset<T, pedidoUpdateArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Pedidos.
-     * @param {PedidoDeleteManyArgs} args - Arguments to filter Pedidos to delete.
+     * @param {pedidoDeleteManyArgs} args - Arguments to filter Pedidos to delete.
      * @example
      * // Delete a few Pedidos
      * const { count } = await prisma.pedido.deleteMany({
@@ -1381,13 +1381,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends PedidoDeleteManyArgs>(args?: SelectSubset<T, PedidoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends pedidoDeleteManyArgs>(args?: SelectSubset<T, pedidoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Pedidos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PedidoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {pedidoUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Pedidos
      * const pedido = await prisma.pedido.updateMany({
@@ -1400,11 +1400,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends PedidoUpdateManyArgs>(args: SelectSubset<T, PedidoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends pedidoUpdateManyArgs>(args: SelectSubset<T, pedidoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Pedido.
-     * @param {PedidoUpsertArgs} args - Arguments to update or create a Pedido.
+     * @param {pedidoUpsertArgs} args - Arguments to update or create a Pedido.
      * @example
      * // Update or create a Pedido
      * const pedido = await prisma.pedido.upsert({
@@ -1419,14 +1419,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends PedidoUpsertArgs>(args: SelectSubset<T, PedidoUpsertArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends pedidoUpsertArgs>(args: SelectSubset<T, pedidoUpsertArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Pedidos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PedidoCountArgs} args - Arguments to filter Pedidos to count.
+     * @param {pedidoCountArgs} args - Arguments to filter Pedidos to count.
      * @example
      * // Count the number of Pedidos
      * const count = await prisma.pedido.count({
@@ -1435,8 +1435,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends PedidoCountArgs>(
-      args?: Subset<T, PedidoCountArgs>,
+    count<T extends pedidoCountArgs>(
+      args?: Subset<T, pedidoCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -1475,7 +1475,7 @@ export namespace Prisma {
      * Group by Pedido.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PedidoGroupByArgs} args - Group by arguments.
+     * @param {pedidoGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1490,14 +1490,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends PedidoGroupByArgs,
+      T extends pedidoGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PedidoGroupByArgs['orderBy'] }
-        : { orderBy?: PedidoGroupByArgs['orderBy'] },
+        ? { orderBy: pedidoGroupByArgs['orderBy'] }
+        : { orderBy?: pedidoGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1546,22 +1546,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, PedidoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPedidoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, pedidoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPedidoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Pedido model
+   * Fields of the pedido model
    */
-  readonly fields: PedidoFieldRefs;
+  readonly fields: pedidoFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Pedido.
+   * The delegate class that acts as a "Promise-like" for pedido.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__PedidoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__pedidoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    itens<T extends Pedido$itensArgs<ExtArgs> = {}>(args?: Subset<T, Pedido$itensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    itens<T extends pedido$itensArgs<ExtArgs> = {}>(args?: Subset<T, pedido$itensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1588,413 +1588,413 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Pedido model
+   * Fields of the pedido model
    */
-  interface PedidoFieldRefs {
-    readonly pedido_id: FieldRef<"Pedido", 'Int'>
-    readonly usuario_id: FieldRef<"Pedido", 'Int'>
-    readonly restaurante_id: FieldRef<"Pedido", 'Int'>
-    readonly pedido_status: FieldRef<"Pedido", 'Int'>
-    readonly pedido_valor_total: FieldRef<"Pedido", 'Float'>
-    readonly pedido_criacao_pedido: FieldRef<"Pedido", 'DateTime'>
+  interface pedidoFieldRefs {
+    readonly pedido_id: FieldRef<"pedido", 'Int'>
+    readonly usuario_id: FieldRef<"pedido", 'Int'>
+    readonly restaurante_id: FieldRef<"pedido", 'Int'>
+    readonly pedido_status: FieldRef<"pedido", 'Int'>
+    readonly pedido_valor_total: FieldRef<"pedido", 'Float'>
+    readonly pedido_criacao_pedido: FieldRef<"pedido", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Pedido findUnique
+   * pedido findUnique
    */
-  export type PedidoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which Pedido to fetch.
+     * Filter, which pedido to fetch.
      */
-    where: PedidoWhereUniqueInput
+    where: pedidoWhereUniqueInput
   }
 
   /**
-   * Pedido findUniqueOrThrow
+   * pedido findUniqueOrThrow
    */
-  export type PedidoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which Pedido to fetch.
+     * Filter, which pedido to fetch.
      */
-    where: PedidoWhereUniqueInput
+    where: pedidoWhereUniqueInput
   }
 
   /**
-   * Pedido findFirst
+   * pedido findFirst
    */
-  export type PedidoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which Pedido to fetch.
+     * Filter, which pedido to fetch.
      */
-    where?: PedidoWhereInput
+    where?: pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pedidos to fetch.
+     * Determine the order of pedidos to fetch.
      */
-    orderBy?: PedidoOrderByWithRelationInput | PedidoOrderByWithRelationInput[]
+    orderBy?: pedidoOrderByWithRelationInput | pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Pedidos.
+     * Sets the position for searching for pedidos.
      */
-    cursor?: PedidoWhereUniqueInput
+    cursor?: pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pedidos from the position of the cursor.
+     * Take `±n` pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pedidos.
+     * Skip the first `n` pedidos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Pedidos.
+     * Filter by unique combinations of pedidos.
      */
     distinct?: PedidoScalarFieldEnum | PedidoScalarFieldEnum[]
   }
 
   /**
-   * Pedido findFirstOrThrow
+   * pedido findFirstOrThrow
    */
-  export type PedidoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which Pedido to fetch.
+     * Filter, which pedido to fetch.
      */
-    where?: PedidoWhereInput
+    where?: pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pedidos to fetch.
+     * Determine the order of pedidos to fetch.
      */
-    orderBy?: PedidoOrderByWithRelationInput | PedidoOrderByWithRelationInput[]
+    orderBy?: pedidoOrderByWithRelationInput | pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Pedidos.
+     * Sets the position for searching for pedidos.
      */
-    cursor?: PedidoWhereUniqueInput
+    cursor?: pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pedidos from the position of the cursor.
+     * Take `±n` pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pedidos.
+     * Skip the first `n` pedidos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Pedidos.
+     * Filter by unique combinations of pedidos.
      */
     distinct?: PedidoScalarFieldEnum | PedidoScalarFieldEnum[]
   }
 
   /**
-   * Pedido findMany
+   * pedido findMany
    */
-  export type PedidoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which Pedidos to fetch.
+     * Filter, which pedidos to fetch.
      */
-    where?: PedidoWhereInput
+    where?: pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pedidos to fetch.
+     * Determine the order of pedidos to fetch.
      */
-    orderBy?: PedidoOrderByWithRelationInput | PedidoOrderByWithRelationInput[]
+    orderBy?: pedidoOrderByWithRelationInput | pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Pedidos.
+     * Sets the position for listing pedidos.
      */
-    cursor?: PedidoWhereUniqueInput
+    cursor?: pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pedidos from the position of the cursor.
+     * Take `±n` pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pedidos.
+     * Skip the first `n` pedidos.
      */
     skip?: number
     distinct?: PedidoScalarFieldEnum | PedidoScalarFieldEnum[]
   }
 
   /**
-   * Pedido create
+   * pedido create
    */
-  export type PedidoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * The data needed to create a Pedido.
+     * The data needed to create a pedido.
      */
-    data: XOR<PedidoCreateInput, PedidoUncheckedCreateInput>
+    data: XOR<pedidoCreateInput, pedidoUncheckedCreateInput>
   }
 
   /**
-   * Pedido createMany
+   * pedido createMany
    */
-  export type PedidoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Pedidos.
+     * The data used to create many pedidos.
      */
-    data: PedidoCreateManyInput | PedidoCreateManyInput[]
+    data: pedidoCreateManyInput | pedidoCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Pedido update
+   * pedido update
    */
-  export type PedidoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * The data needed to update a Pedido.
+     * The data needed to update a pedido.
      */
-    data: XOR<PedidoUpdateInput, PedidoUncheckedUpdateInput>
+    data: XOR<pedidoUpdateInput, pedidoUncheckedUpdateInput>
     /**
-     * Choose, which Pedido to update.
+     * Choose, which pedido to update.
      */
-    where: PedidoWhereUniqueInput
+    where: pedidoWhereUniqueInput
   }
 
   /**
-   * Pedido updateMany
+   * pedido updateMany
    */
-  export type PedidoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Pedidos.
+     * The data used to update pedidos.
      */
-    data: XOR<PedidoUpdateManyMutationInput, PedidoUncheckedUpdateManyInput>
+    data: XOR<pedidoUpdateManyMutationInput, pedidoUncheckedUpdateManyInput>
     /**
-     * Filter which Pedidos to update
+     * Filter which pedidos to update
      */
-    where?: PedidoWhereInput
+    where?: pedidoWhereInput
     /**
-     * Limit how many Pedidos to update.
+     * Limit how many pedidos to update.
      */
     limit?: number
   }
 
   /**
-   * Pedido upsert
+   * pedido upsert
    */
-  export type PedidoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * The filter to search for the Pedido to update in case it exists.
+     * The filter to search for the pedido to update in case it exists.
      */
-    where: PedidoWhereUniqueInput
+    where: pedidoWhereUniqueInput
     /**
-     * In case the Pedido found by the `where` argument doesn't exist, create a new Pedido with this data.
+     * In case the pedido found by the `where` argument doesn't exist, create a new pedido with this data.
      */
-    create: XOR<PedidoCreateInput, PedidoUncheckedCreateInput>
+    create: XOR<pedidoCreateInput, pedidoUncheckedCreateInput>
     /**
-     * In case the Pedido was found with the provided `where` argument, update it with this data.
+     * In case the pedido was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<PedidoUpdateInput, PedidoUncheckedUpdateInput>
+    update: XOR<pedidoUpdateInput, pedidoUncheckedUpdateInput>
   }
 
   /**
-   * Pedido delete
+   * pedido delete
    */
-  export type PedidoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
     /**
-     * Filter which Pedido to delete.
+     * Filter which pedido to delete.
      */
-    where: PedidoWhereUniqueInput
+    where: pedidoWhereUniqueInput
   }
 
   /**
-   * Pedido deleteMany
+   * pedido deleteMany
    */
-  export type PedidoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Pedidos to delete
+     * Filter which pedidos to delete
      */
-    where?: PedidoWhereInput
+    where?: pedidoWhereInput
     /**
-     * Limit how many Pedidos to delete.
+     * Limit how many pedidos to delete.
      */
     limit?: number
   }
 
   /**
-   * Pedido.itens
+   * pedido.itens
    */
-  export type Pedido$itensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedido$itensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
-    where?: ItemPedidoWhereInput
-    orderBy?: ItemPedidoOrderByWithRelationInput | ItemPedidoOrderByWithRelationInput[]
-    cursor?: ItemPedidoWhereUniqueInput
+    include?: item_pedidoInclude<ExtArgs> | null
+    where?: item_pedidoWhereInput
+    orderBy?: item_pedidoOrderByWithRelationInput | item_pedidoOrderByWithRelationInput[]
+    cursor?: item_pedidoWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ItemPedidoScalarFieldEnum | ItemPedidoScalarFieldEnum[]
+    distinct?: Item_pedidoScalarFieldEnum | Item_pedidoScalarFieldEnum[]
   }
 
   /**
-   * Pedido without action
+   * pedido without action
    */
-  export type PedidoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type pedidoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pedido
+     * Select specific fields to fetch from the pedido
      */
-    select?: PedidoSelect<ExtArgs> | null
+    select?: pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pedido
+     * Omit specific fields from the pedido
      */
-    omit?: PedidoOmit<ExtArgs> | null
+    omit?: pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PedidoInclude<ExtArgs> | null
+    include?: pedidoInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model ItemPedido
+   * Model item_pedido
    */
 
-  export type AggregateItemPedido = {
-    _count: ItemPedidoCountAggregateOutputType | null
-    _avg: ItemPedidoAvgAggregateOutputType | null
-    _sum: ItemPedidoSumAggregateOutputType | null
-    _min: ItemPedidoMinAggregateOutputType | null
-    _max: ItemPedidoMaxAggregateOutputType | null
+  export type AggregateItem_pedido = {
+    _count: Item_pedidoCountAggregateOutputType | null
+    _avg: Item_pedidoAvgAggregateOutputType | null
+    _sum: Item_pedidoSumAggregateOutputType | null
+    _min: Item_pedidoMinAggregateOutputType | null
+    _max: Item_pedidoMaxAggregateOutputType | null
   }
 
-  export type ItemPedidoAvgAggregateOutputType = {
+  export type Item_pedidoAvgAggregateOutputType = {
     item_pedido_id: number | null
     item_pedido_quantidade: number | null
     item_pedido_preco: number | null
@@ -2002,7 +2002,7 @@ export namespace Prisma {
     prato_id: number | null
   }
 
-  export type ItemPedidoSumAggregateOutputType = {
+  export type Item_pedidoSumAggregateOutputType = {
     item_pedido_id: number | null
     item_pedido_quantidade: number | null
     item_pedido_preco: number | null
@@ -2010,7 +2010,7 @@ export namespace Prisma {
     prato_id: number | null
   }
 
-  export type ItemPedidoMinAggregateOutputType = {
+  export type Item_pedidoMinAggregateOutputType = {
     item_pedido_id: number | null
     item_pedido_quantidade: number | null
     item_pedido_preco: number | null
@@ -2018,7 +2018,7 @@ export namespace Prisma {
     prato_id: number | null
   }
 
-  export type ItemPedidoMaxAggregateOutputType = {
+  export type Item_pedidoMaxAggregateOutputType = {
     item_pedido_id: number | null
     item_pedido_quantidade: number | null
     item_pedido_preco: number | null
@@ -2026,7 +2026,7 @@ export namespace Prisma {
     prato_id: number | null
   }
 
-  export type ItemPedidoCountAggregateOutputType = {
+  export type Item_pedidoCountAggregateOutputType = {
     item_pedido_id: number
     item_pedido_quantidade: number
     item_pedido_preco: number
@@ -2036,7 +2036,7 @@ export namespace Prisma {
   }
 
 
-  export type ItemPedidoAvgAggregateInputType = {
+  export type Item_pedidoAvgAggregateInputType = {
     item_pedido_id?: true
     item_pedido_quantidade?: true
     item_pedido_preco?: true
@@ -2044,7 +2044,7 @@ export namespace Prisma {
     prato_id?: true
   }
 
-  export type ItemPedidoSumAggregateInputType = {
+  export type Item_pedidoSumAggregateInputType = {
     item_pedido_id?: true
     item_pedido_quantidade?: true
     item_pedido_preco?: true
@@ -2052,7 +2052,7 @@ export namespace Prisma {
     prato_id?: true
   }
 
-  export type ItemPedidoMinAggregateInputType = {
+  export type Item_pedidoMinAggregateInputType = {
     item_pedido_id?: true
     item_pedido_quantidade?: true
     item_pedido_preco?: true
@@ -2060,7 +2060,7 @@ export namespace Prisma {
     prato_id?: true
   }
 
-  export type ItemPedidoMaxAggregateInputType = {
+  export type Item_pedidoMaxAggregateInputType = {
     item_pedido_id?: true
     item_pedido_quantidade?: true
     item_pedido_preco?: true
@@ -2068,7 +2068,7 @@ export namespace Prisma {
     prato_id?: true
   }
 
-  export type ItemPedidoCountAggregateInputType = {
+  export type Item_pedidoCountAggregateInputType = {
     item_pedido_id?: true
     item_pedido_quantidade?: true
     item_pedido_preco?: true
@@ -2077,131 +2077,131 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type ItemPedidoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Item_pedidoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which ItemPedido to aggregate.
+     * Filter which item_pedido to aggregate.
      */
-    where?: ItemPedidoWhereInput
+    where?: item_pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ItemPedidos to fetch.
+     * Determine the order of item_pedidos to fetch.
      */
-    orderBy?: ItemPedidoOrderByWithRelationInput | ItemPedidoOrderByWithRelationInput[]
+    orderBy?: item_pedidoOrderByWithRelationInput | item_pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ItemPedidoWhereUniqueInput
+    cursor?: item_pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ItemPedidos from the position of the cursor.
+     * Take `±n` item_pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ItemPedidos.
+     * Skip the first `n` item_pedidos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned ItemPedidos
+     * Count returned item_pedidos
     **/
-    _count?: true | ItemPedidoCountAggregateInputType
+    _count?: true | Item_pedidoCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: ItemPedidoAvgAggregateInputType
+    _avg?: Item_pedidoAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: ItemPedidoSumAggregateInputType
+    _sum?: Item_pedidoSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: ItemPedidoMinAggregateInputType
+    _min?: Item_pedidoMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: ItemPedidoMaxAggregateInputType
+    _max?: Item_pedidoMaxAggregateInputType
   }
 
-  export type GetItemPedidoAggregateType<T extends ItemPedidoAggregateArgs> = {
-        [P in keyof T & keyof AggregateItemPedido]: P extends '_count' | 'count'
+  export type GetItem_pedidoAggregateType<T extends Item_pedidoAggregateArgs> = {
+        [P in keyof T & keyof AggregateItem_pedido]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateItemPedido[P]>
-      : GetScalarType<T[P], AggregateItemPedido[P]>
+        : GetScalarType<T[P], AggregateItem_pedido[P]>
+      : GetScalarType<T[P], AggregateItem_pedido[P]>
   }
 
 
 
 
-  export type ItemPedidoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ItemPedidoWhereInput
-    orderBy?: ItemPedidoOrderByWithAggregationInput | ItemPedidoOrderByWithAggregationInput[]
-    by: ItemPedidoScalarFieldEnum[] | ItemPedidoScalarFieldEnum
-    having?: ItemPedidoScalarWhereWithAggregatesInput
+  export type item_pedidoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: item_pedidoWhereInput
+    orderBy?: item_pedidoOrderByWithAggregationInput | item_pedidoOrderByWithAggregationInput[]
+    by: Item_pedidoScalarFieldEnum[] | Item_pedidoScalarFieldEnum
+    having?: item_pedidoScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: ItemPedidoCountAggregateInputType | true
-    _avg?: ItemPedidoAvgAggregateInputType
-    _sum?: ItemPedidoSumAggregateInputType
-    _min?: ItemPedidoMinAggregateInputType
-    _max?: ItemPedidoMaxAggregateInputType
+    _count?: Item_pedidoCountAggregateInputType | true
+    _avg?: Item_pedidoAvgAggregateInputType
+    _sum?: Item_pedidoSumAggregateInputType
+    _min?: Item_pedidoMinAggregateInputType
+    _max?: Item_pedidoMaxAggregateInputType
   }
 
-  export type ItemPedidoGroupByOutputType = {
+  export type Item_pedidoGroupByOutputType = {
     item_pedido_id: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     pedido_id: number
     prato_id: number
-    _count: ItemPedidoCountAggregateOutputType | null
-    _avg: ItemPedidoAvgAggregateOutputType | null
-    _sum: ItemPedidoSumAggregateOutputType | null
-    _min: ItemPedidoMinAggregateOutputType | null
-    _max: ItemPedidoMaxAggregateOutputType | null
+    _count: Item_pedidoCountAggregateOutputType | null
+    _avg: Item_pedidoAvgAggregateOutputType | null
+    _sum: Item_pedidoSumAggregateOutputType | null
+    _min: Item_pedidoMinAggregateOutputType | null
+    _max: Item_pedidoMaxAggregateOutputType | null
   }
 
-  type GetItemPedidoGroupByPayload<T extends ItemPedidoGroupByArgs> = Prisma.PrismaPromise<
+  type GetItem_pedidoGroupByPayload<T extends item_pedidoGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<ItemPedidoGroupByOutputType, T['by']> &
+      PickEnumerable<Item_pedidoGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof ItemPedidoGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Item_pedidoGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], ItemPedidoGroupByOutputType[P]>
-            : GetScalarType<T[P], ItemPedidoGroupByOutputType[P]>
+              : GetScalarType<T[P], Item_pedidoGroupByOutputType[P]>
+            : GetScalarType<T[P], Item_pedidoGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type ItemPedidoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type item_pedidoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     item_pedido_id?: boolean
     item_pedido_quantidade?: boolean
     item_pedido_preco?: boolean
     pedido_id?: boolean
     prato_id?: boolean
-    pedido?: boolean | PedidoDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["itemPedido"]>
+    pedido?: boolean | pedidoDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["item_pedido"]>
 
 
 
-  export type ItemPedidoSelectScalar = {
+  export type item_pedidoSelectScalar = {
     item_pedido_id?: boolean
     item_pedido_quantidade?: boolean
     item_pedido_preco?: boolean
@@ -2209,15 +2209,15 @@ export namespace Prisma {
     prato_id?: boolean
   }
 
-  export type ItemPedidoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"item_pedido_id" | "item_pedido_quantidade" | "item_pedido_preco" | "pedido_id" | "prato_id", ExtArgs["result"]["itemPedido"]>
-  export type ItemPedidoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    pedido?: boolean | PedidoDefaultArgs<ExtArgs>
+  export type item_pedidoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"item_pedido_id" | "item_pedido_quantidade" | "item_pedido_preco" | "pedido_id" | "prato_id", ExtArgs["result"]["item_pedido"]>
+  export type item_pedidoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    pedido?: boolean | pedidoDefaultArgs<ExtArgs>
   }
 
-  export type $ItemPedidoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "ItemPedido"
+  export type $item_pedidoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "item_pedido"
     objects: {
-      pedido: Prisma.$PedidoPayload<ExtArgs>
+      pedido: Prisma.$pedidoPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       item_pedido_id: number
@@ -2225,143 +2225,143 @@ export namespace Prisma {
       item_pedido_preco: number
       pedido_id: number
       prato_id: number
-    }, ExtArgs["result"]["itemPedido"]>
+    }, ExtArgs["result"]["item_pedido"]>
     composites: {}
   }
 
-  type ItemPedidoGetPayload<S extends boolean | null | undefined | ItemPedidoDefaultArgs> = $Result.GetResult<Prisma.$ItemPedidoPayload, S>
+  type item_pedidoGetPayload<S extends boolean | null | undefined | item_pedidoDefaultArgs> = $Result.GetResult<Prisma.$item_pedidoPayload, S>
 
-  type ItemPedidoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ItemPedidoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ItemPedidoCountAggregateInputType | true
+  type item_pedidoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<item_pedidoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Item_pedidoCountAggregateInputType | true
     }
 
-  export interface ItemPedidoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ItemPedido'], meta: { name: 'ItemPedido' } }
+  export interface item_pedidoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['item_pedido'], meta: { name: 'item_pedido' } }
     /**
-     * Find zero or one ItemPedido that matches the filter.
-     * @param {ItemPedidoFindUniqueArgs} args - Arguments to find a ItemPedido
+     * Find zero or one Item_pedido that matches the filter.
+     * @param {item_pedidoFindUniqueArgs} args - Arguments to find a Item_pedido
      * @example
-     * // Get one ItemPedido
-     * const itemPedido = await prisma.itemPedido.findUnique({
+     * // Get one Item_pedido
+     * const item_pedido = await prisma.item_pedido.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends ItemPedidoFindUniqueArgs>(args: SelectSubset<T, ItemPedidoFindUniqueArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends item_pedidoFindUniqueArgs>(args: SelectSubset<T, item_pedidoFindUniqueArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one ItemPedido that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Item_pedido that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {ItemPedidoFindUniqueOrThrowArgs} args - Arguments to find a ItemPedido
+     * @param {item_pedidoFindUniqueOrThrowArgs} args - Arguments to find a Item_pedido
      * @example
-     * // Get one ItemPedido
-     * const itemPedido = await prisma.itemPedido.findUniqueOrThrow({
+     * // Get one Item_pedido
+     * const item_pedido = await prisma.item_pedido.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends ItemPedidoFindUniqueOrThrowArgs>(args: SelectSubset<T, ItemPedidoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends item_pedidoFindUniqueOrThrowArgs>(args: SelectSubset<T, item_pedidoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first ItemPedido that matches the filter.
+     * Find the first Item_pedido that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ItemPedidoFindFirstArgs} args - Arguments to find a ItemPedido
+     * @param {item_pedidoFindFirstArgs} args - Arguments to find a Item_pedido
      * @example
-     * // Get one ItemPedido
-     * const itemPedido = await prisma.itemPedido.findFirst({
+     * // Get one Item_pedido
+     * const item_pedido = await prisma.item_pedido.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends ItemPedidoFindFirstArgs>(args?: SelectSubset<T, ItemPedidoFindFirstArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends item_pedidoFindFirstArgs>(args?: SelectSubset<T, item_pedidoFindFirstArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first ItemPedido that matches the filter or
+     * Find the first Item_pedido that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ItemPedidoFindFirstOrThrowArgs} args - Arguments to find a ItemPedido
+     * @param {item_pedidoFindFirstOrThrowArgs} args - Arguments to find a Item_pedido
      * @example
-     * // Get one ItemPedido
-     * const itemPedido = await prisma.itemPedido.findFirstOrThrow({
+     * // Get one Item_pedido
+     * const item_pedido = await prisma.item_pedido.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends ItemPedidoFindFirstOrThrowArgs>(args?: SelectSubset<T, ItemPedidoFindFirstOrThrowArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends item_pedidoFindFirstOrThrowArgs>(args?: SelectSubset<T, item_pedidoFindFirstOrThrowArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more ItemPedidos that matches the filter.
+     * Find zero or more Item_pedidos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ItemPedidoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {item_pedidoFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all ItemPedidos
-     * const itemPedidos = await prisma.itemPedido.findMany()
+     * // Get all Item_pedidos
+     * const item_pedidos = await prisma.item_pedido.findMany()
      * 
-     * // Get first 10 ItemPedidos
-     * const itemPedidos = await prisma.itemPedido.findMany({ take: 10 })
+     * // Get first 10 Item_pedidos
+     * const item_pedidos = await prisma.item_pedido.findMany({ take: 10 })
      * 
      * // Only select the `item_pedido_id`
-     * const itemPedidoWithItem_pedido_idOnly = await prisma.itemPedido.findMany({ select: { item_pedido_id: true } })
+     * const item_pedidoWithItem_pedido_idOnly = await prisma.item_pedido.findMany({ select: { item_pedido_id: true } })
      * 
      */
-    findMany<T extends ItemPedidoFindManyArgs>(args?: SelectSubset<T, ItemPedidoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends item_pedidoFindManyArgs>(args?: SelectSubset<T, item_pedidoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a ItemPedido.
-     * @param {ItemPedidoCreateArgs} args - Arguments to create a ItemPedido.
+     * Create a Item_pedido.
+     * @param {item_pedidoCreateArgs} args - Arguments to create a Item_pedido.
      * @example
-     * // Create one ItemPedido
-     * const ItemPedido = await prisma.itemPedido.create({
+     * // Create one Item_pedido
+     * const Item_pedido = await prisma.item_pedido.create({
      *   data: {
-     *     // ... data to create a ItemPedido
+     *     // ... data to create a Item_pedido
      *   }
      * })
      * 
      */
-    create<T extends ItemPedidoCreateArgs>(args: SelectSubset<T, ItemPedidoCreateArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends item_pedidoCreateArgs>(args: SelectSubset<T, item_pedidoCreateArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many ItemPedidos.
-     * @param {ItemPedidoCreateManyArgs} args - Arguments to create many ItemPedidos.
+     * Create many Item_pedidos.
+     * @param {item_pedidoCreateManyArgs} args - Arguments to create many Item_pedidos.
      * @example
-     * // Create many ItemPedidos
-     * const itemPedido = await prisma.itemPedido.createMany({
+     * // Create many Item_pedidos
+     * const item_pedido = await prisma.item_pedido.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends ItemPedidoCreateManyArgs>(args?: SelectSubset<T, ItemPedidoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends item_pedidoCreateManyArgs>(args?: SelectSubset<T, item_pedidoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a ItemPedido.
-     * @param {ItemPedidoDeleteArgs} args - Arguments to delete one ItemPedido.
+     * Delete a Item_pedido.
+     * @param {item_pedidoDeleteArgs} args - Arguments to delete one Item_pedido.
      * @example
-     * // Delete one ItemPedido
-     * const ItemPedido = await prisma.itemPedido.delete({
+     * // Delete one Item_pedido
+     * const Item_pedido = await prisma.item_pedido.delete({
      *   where: {
-     *     // ... filter to delete one ItemPedido
+     *     // ... filter to delete one Item_pedido
      *   }
      * })
      * 
      */
-    delete<T extends ItemPedidoDeleteArgs>(args: SelectSubset<T, ItemPedidoDeleteArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends item_pedidoDeleteArgs>(args: SelectSubset<T, item_pedidoDeleteArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one ItemPedido.
-     * @param {ItemPedidoUpdateArgs} args - Arguments to update one ItemPedido.
+     * Update one Item_pedido.
+     * @param {item_pedidoUpdateArgs} args - Arguments to update one Item_pedido.
      * @example
-     * // Update one ItemPedido
-     * const itemPedido = await prisma.itemPedido.update({
+     * // Update one Item_pedido
+     * const item_pedido = await prisma.item_pedido.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2371,30 +2371,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends ItemPedidoUpdateArgs>(args: SelectSubset<T, ItemPedidoUpdateArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends item_pedidoUpdateArgs>(args: SelectSubset<T, item_pedidoUpdateArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more ItemPedidos.
-     * @param {ItemPedidoDeleteManyArgs} args - Arguments to filter ItemPedidos to delete.
+     * Delete zero or more Item_pedidos.
+     * @param {item_pedidoDeleteManyArgs} args - Arguments to filter Item_pedidos to delete.
      * @example
-     * // Delete a few ItemPedidos
-     * const { count } = await prisma.itemPedido.deleteMany({
+     * // Delete a few Item_pedidos
+     * const { count } = await prisma.item_pedido.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends ItemPedidoDeleteManyArgs>(args?: SelectSubset<T, ItemPedidoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends item_pedidoDeleteManyArgs>(args?: SelectSubset<T, item_pedidoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more ItemPedidos.
+     * Update zero or more Item_pedidos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ItemPedidoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {item_pedidoUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many ItemPedidos
-     * const itemPedido = await prisma.itemPedido.updateMany({
+     * // Update many Item_pedidos
+     * const item_pedido = await prisma.item_pedido.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2404,56 +2404,56 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends ItemPedidoUpdateManyArgs>(args: SelectSubset<T, ItemPedidoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends item_pedidoUpdateManyArgs>(args: SelectSubset<T, item_pedidoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one ItemPedido.
-     * @param {ItemPedidoUpsertArgs} args - Arguments to update or create a ItemPedido.
+     * Create or update one Item_pedido.
+     * @param {item_pedidoUpsertArgs} args - Arguments to update or create a Item_pedido.
      * @example
-     * // Update or create a ItemPedido
-     * const itemPedido = await prisma.itemPedido.upsert({
+     * // Update or create a Item_pedido
+     * const item_pedido = await prisma.item_pedido.upsert({
      *   create: {
-     *     // ... data to create a ItemPedido
+     *     // ... data to create a Item_pedido
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the ItemPedido we want to update
+     *     // ... the filter for the Item_pedido we want to update
      *   }
      * })
      */
-    upsert<T extends ItemPedidoUpsertArgs>(args: SelectSubset<T, ItemPedidoUpsertArgs<ExtArgs>>): Prisma__ItemPedidoClient<$Result.GetResult<Prisma.$ItemPedidoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends item_pedidoUpsertArgs>(args: SelectSubset<T, item_pedidoUpsertArgs<ExtArgs>>): Prisma__item_pedidoClient<$Result.GetResult<Prisma.$item_pedidoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of ItemPedidos.
+     * Count the number of Item_pedidos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ItemPedidoCountArgs} args - Arguments to filter ItemPedidos to count.
+     * @param {item_pedidoCountArgs} args - Arguments to filter Item_pedidos to count.
      * @example
-     * // Count the number of ItemPedidos
-     * const count = await prisma.itemPedido.count({
+     * // Count the number of Item_pedidos
+     * const count = await prisma.item_pedido.count({
      *   where: {
-     *     // ... the filter for the ItemPedidos we want to count
+     *     // ... the filter for the Item_pedidos we want to count
      *   }
      * })
     **/
-    count<T extends ItemPedidoCountArgs>(
-      args?: Subset<T, ItemPedidoCountArgs>,
+    count<T extends item_pedidoCountArgs>(
+      args?: Subset<T, item_pedidoCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], ItemPedidoCountAggregateOutputType>
+          : GetScalarType<T['select'], Item_pedidoCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a ItemPedido.
+     * Allows you to perform aggregations operations on a Item_pedido.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ItemPedidoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Item_pedidoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2473,13 +2473,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends ItemPedidoAggregateArgs>(args: Subset<T, ItemPedidoAggregateArgs>): Prisma.PrismaPromise<GetItemPedidoAggregateType<T>>
+    aggregate<T extends Item_pedidoAggregateArgs>(args: Subset<T, Item_pedidoAggregateArgs>): Prisma.PrismaPromise<GetItem_pedidoAggregateType<T>>
 
     /**
-     * Group by ItemPedido.
+     * Group by Item_pedido.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ItemPedidoGroupByArgs} args - Group by arguments.
+     * @param {item_pedidoGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2494,14 +2494,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ItemPedidoGroupByArgs,
+      T extends item_pedidoGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ItemPedidoGroupByArgs['orderBy'] }
-        : { orderBy?: ItemPedidoGroupByArgs['orderBy'] },
+        ? { orderBy: item_pedidoGroupByArgs['orderBy'] }
+        : { orderBy?: item_pedidoGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2550,22 +2550,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ItemPedidoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetItemPedidoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, item_pedidoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetItem_pedidoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the ItemPedido model
+   * Fields of the item_pedido model
    */
-  readonly fields: ItemPedidoFieldRefs;
+  readonly fields: item_pedidoFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for ItemPedido.
+   * The delegate class that acts as a "Promise-like" for item_pedido.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ItemPedidoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__item_pedidoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    pedido<T extends PedidoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PedidoDefaultArgs<ExtArgs>>): Prisma__PedidoClient<$Result.GetResult<Prisma.$PedidoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    pedido<T extends pedidoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, pedidoDefaultArgs<ExtArgs>>): Prisma__pedidoClient<$Result.GetResult<Prisma.$pedidoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2592,372 +2592,372 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the ItemPedido model
+   * Fields of the item_pedido model
    */
-  interface ItemPedidoFieldRefs {
-    readonly item_pedido_id: FieldRef<"ItemPedido", 'Int'>
-    readonly item_pedido_quantidade: FieldRef<"ItemPedido", 'Int'>
-    readonly item_pedido_preco: FieldRef<"ItemPedido", 'Float'>
-    readonly pedido_id: FieldRef<"ItemPedido", 'Int'>
-    readonly prato_id: FieldRef<"ItemPedido", 'Int'>
+  interface item_pedidoFieldRefs {
+    readonly item_pedido_id: FieldRef<"item_pedido", 'Int'>
+    readonly item_pedido_quantidade: FieldRef<"item_pedido", 'Int'>
+    readonly item_pedido_preco: FieldRef<"item_pedido", 'Float'>
+    readonly pedido_id: FieldRef<"item_pedido", 'Int'>
+    readonly prato_id: FieldRef<"item_pedido", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * ItemPedido findUnique
+   * item_pedido findUnique
    */
-  export type ItemPedidoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which ItemPedido to fetch.
+     * Filter, which item_pedido to fetch.
      */
-    where: ItemPedidoWhereUniqueInput
+    where: item_pedidoWhereUniqueInput
   }
 
   /**
-   * ItemPedido findUniqueOrThrow
+   * item_pedido findUniqueOrThrow
    */
-  export type ItemPedidoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which ItemPedido to fetch.
+     * Filter, which item_pedido to fetch.
      */
-    where: ItemPedidoWhereUniqueInput
+    where: item_pedidoWhereUniqueInput
   }
 
   /**
-   * ItemPedido findFirst
+   * item_pedido findFirst
    */
-  export type ItemPedidoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which ItemPedido to fetch.
+     * Filter, which item_pedido to fetch.
      */
-    where?: ItemPedidoWhereInput
+    where?: item_pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ItemPedidos to fetch.
+     * Determine the order of item_pedidos to fetch.
      */
-    orderBy?: ItemPedidoOrderByWithRelationInput | ItemPedidoOrderByWithRelationInput[]
+    orderBy?: item_pedidoOrderByWithRelationInput | item_pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for ItemPedidos.
+     * Sets the position for searching for item_pedidos.
      */
-    cursor?: ItemPedidoWhereUniqueInput
+    cursor?: item_pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ItemPedidos from the position of the cursor.
+     * Take `±n` item_pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ItemPedidos.
+     * Skip the first `n` item_pedidos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of ItemPedidos.
+     * Filter by unique combinations of item_pedidos.
      */
-    distinct?: ItemPedidoScalarFieldEnum | ItemPedidoScalarFieldEnum[]
+    distinct?: Item_pedidoScalarFieldEnum | Item_pedidoScalarFieldEnum[]
   }
 
   /**
-   * ItemPedido findFirstOrThrow
+   * item_pedido findFirstOrThrow
    */
-  export type ItemPedidoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which ItemPedido to fetch.
+     * Filter, which item_pedido to fetch.
      */
-    where?: ItemPedidoWhereInput
+    where?: item_pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ItemPedidos to fetch.
+     * Determine the order of item_pedidos to fetch.
      */
-    orderBy?: ItemPedidoOrderByWithRelationInput | ItemPedidoOrderByWithRelationInput[]
+    orderBy?: item_pedidoOrderByWithRelationInput | item_pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for ItemPedidos.
+     * Sets the position for searching for item_pedidos.
      */
-    cursor?: ItemPedidoWhereUniqueInput
+    cursor?: item_pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ItemPedidos from the position of the cursor.
+     * Take `±n` item_pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ItemPedidos.
+     * Skip the first `n` item_pedidos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of ItemPedidos.
+     * Filter by unique combinations of item_pedidos.
      */
-    distinct?: ItemPedidoScalarFieldEnum | ItemPedidoScalarFieldEnum[]
+    distinct?: Item_pedidoScalarFieldEnum | Item_pedidoScalarFieldEnum[]
   }
 
   /**
-   * ItemPedido findMany
+   * item_pedido findMany
    */
-  export type ItemPedidoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * Filter, which ItemPedidos to fetch.
+     * Filter, which item_pedidos to fetch.
      */
-    where?: ItemPedidoWhereInput
+    where?: item_pedidoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ItemPedidos to fetch.
+     * Determine the order of item_pedidos to fetch.
      */
-    orderBy?: ItemPedidoOrderByWithRelationInput | ItemPedidoOrderByWithRelationInput[]
+    orderBy?: item_pedidoOrderByWithRelationInput | item_pedidoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing ItemPedidos.
+     * Sets the position for listing item_pedidos.
      */
-    cursor?: ItemPedidoWhereUniqueInput
+    cursor?: item_pedidoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ItemPedidos from the position of the cursor.
+     * Take `±n` item_pedidos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ItemPedidos.
+     * Skip the first `n` item_pedidos.
      */
     skip?: number
-    distinct?: ItemPedidoScalarFieldEnum | ItemPedidoScalarFieldEnum[]
+    distinct?: Item_pedidoScalarFieldEnum | Item_pedidoScalarFieldEnum[]
   }
 
   /**
-   * ItemPedido create
+   * item_pedido create
    */
-  export type ItemPedidoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * The data needed to create a ItemPedido.
+     * The data needed to create a item_pedido.
      */
-    data: XOR<ItemPedidoCreateInput, ItemPedidoUncheckedCreateInput>
+    data: XOR<item_pedidoCreateInput, item_pedidoUncheckedCreateInput>
   }
 
   /**
-   * ItemPedido createMany
+   * item_pedido createMany
    */
-  export type ItemPedidoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many ItemPedidos.
+     * The data used to create many item_pedidos.
      */
-    data: ItemPedidoCreateManyInput | ItemPedidoCreateManyInput[]
+    data: item_pedidoCreateManyInput | item_pedidoCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * ItemPedido update
+   * item_pedido update
    */
-  export type ItemPedidoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * The data needed to update a ItemPedido.
+     * The data needed to update a item_pedido.
      */
-    data: XOR<ItemPedidoUpdateInput, ItemPedidoUncheckedUpdateInput>
+    data: XOR<item_pedidoUpdateInput, item_pedidoUncheckedUpdateInput>
     /**
-     * Choose, which ItemPedido to update.
+     * Choose, which item_pedido to update.
      */
-    where: ItemPedidoWhereUniqueInput
+    where: item_pedidoWhereUniqueInput
   }
 
   /**
-   * ItemPedido updateMany
+   * item_pedido updateMany
    */
-  export type ItemPedidoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update ItemPedidos.
+     * The data used to update item_pedidos.
      */
-    data: XOR<ItemPedidoUpdateManyMutationInput, ItemPedidoUncheckedUpdateManyInput>
+    data: XOR<item_pedidoUpdateManyMutationInput, item_pedidoUncheckedUpdateManyInput>
     /**
-     * Filter which ItemPedidos to update
+     * Filter which item_pedidos to update
      */
-    where?: ItemPedidoWhereInput
+    where?: item_pedidoWhereInput
     /**
-     * Limit how many ItemPedidos to update.
+     * Limit how many item_pedidos to update.
      */
     limit?: number
   }
 
   /**
-   * ItemPedido upsert
+   * item_pedido upsert
    */
-  export type ItemPedidoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * The filter to search for the ItemPedido to update in case it exists.
+     * The filter to search for the item_pedido to update in case it exists.
      */
-    where: ItemPedidoWhereUniqueInput
+    where: item_pedidoWhereUniqueInput
     /**
-     * In case the ItemPedido found by the `where` argument doesn't exist, create a new ItemPedido with this data.
+     * In case the item_pedido found by the `where` argument doesn't exist, create a new item_pedido with this data.
      */
-    create: XOR<ItemPedidoCreateInput, ItemPedidoUncheckedCreateInput>
+    create: XOR<item_pedidoCreateInput, item_pedidoUncheckedCreateInput>
     /**
-     * In case the ItemPedido was found with the provided `where` argument, update it with this data.
+     * In case the item_pedido was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ItemPedidoUpdateInput, ItemPedidoUncheckedUpdateInput>
+    update: XOR<item_pedidoUpdateInput, item_pedidoUncheckedUpdateInput>
   }
 
   /**
-   * ItemPedido delete
+   * item_pedido delete
    */
-  export type ItemPedidoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
     /**
-     * Filter which ItemPedido to delete.
+     * Filter which item_pedido to delete.
      */
-    where: ItemPedidoWhereUniqueInput
+    where: item_pedidoWhereUniqueInput
   }
 
   /**
-   * ItemPedido deleteMany
+   * item_pedido deleteMany
    */
-  export type ItemPedidoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which ItemPedidos to delete
+     * Filter which item_pedidos to delete
      */
-    where?: ItemPedidoWhereInput
+    where?: item_pedidoWhereInput
     /**
-     * Limit how many ItemPedidos to delete.
+     * Limit how many item_pedidos to delete.
      */
     limit?: number
   }
 
   /**
-   * ItemPedido without action
+   * item_pedido without action
    */
-  export type ItemPedidoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type item_pedidoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ItemPedido
+     * Select specific fields to fetch from the item_pedido
      */
-    select?: ItemPedidoSelect<ExtArgs> | null
+    select?: item_pedidoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ItemPedido
+     * Omit specific fields from the item_pedido
      */
-    omit?: ItemPedidoOmit<ExtArgs> | null
+    omit?: item_pedidoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ItemPedidoInclude<ExtArgs> | null
+    include?: item_pedidoInclude<ExtArgs> | null
   }
 
 
@@ -2987,7 +2987,7 @@ export namespace Prisma {
   export type PedidoScalarFieldEnum = (typeof PedidoScalarFieldEnum)[keyof typeof PedidoScalarFieldEnum]
 
 
-  export const ItemPedidoScalarFieldEnum: {
+  export const Item_pedidoScalarFieldEnum: {
     item_pedido_id: 'item_pedido_id',
     item_pedido_quantidade: 'item_pedido_quantidade',
     item_pedido_preco: 'item_pedido_preco',
@@ -2995,7 +2995,7 @@ export namespace Prisma {
     prato_id: 'prato_id'
   };
 
-  export type ItemPedidoScalarFieldEnum = (typeof ItemPedidoScalarFieldEnum)[keyof typeof ItemPedidoScalarFieldEnum]
+  export type Item_pedidoScalarFieldEnum = (typeof Item_pedidoScalarFieldEnum)[keyof typeof Item_pedidoScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3035,164 +3035,164 @@ export namespace Prisma {
    */
 
 
-  export type PedidoWhereInput = {
-    AND?: PedidoWhereInput | PedidoWhereInput[]
-    OR?: PedidoWhereInput[]
-    NOT?: PedidoWhereInput | PedidoWhereInput[]
-    pedido_id?: IntFilter<"Pedido"> | number
-    usuario_id?: IntFilter<"Pedido"> | number
-    restaurante_id?: IntFilter<"Pedido"> | number
-    pedido_status?: IntFilter<"Pedido"> | number
-    pedido_valor_total?: FloatFilter<"Pedido"> | number
-    pedido_criacao_pedido?: DateTimeFilter<"Pedido"> | Date | string
-    itens?: ItemPedidoListRelationFilter
+  export type pedidoWhereInput = {
+    AND?: pedidoWhereInput | pedidoWhereInput[]
+    OR?: pedidoWhereInput[]
+    NOT?: pedidoWhereInput | pedidoWhereInput[]
+    pedido_id?: IntFilter<"pedido"> | number
+    usuario_id?: IntFilter<"pedido"> | number
+    restaurante_id?: IntFilter<"pedido"> | number
+    pedido_status?: IntFilter<"pedido"> | number
+    pedido_valor_total?: FloatFilter<"pedido"> | number
+    pedido_criacao_pedido?: DateTimeFilter<"pedido"> | Date | string
+    itens?: Item_pedidoListRelationFilter
   }
 
-  export type PedidoOrderByWithRelationInput = {
+  export type pedidoOrderByWithRelationInput = {
     pedido_id?: SortOrder
     usuario_id?: SortOrder
     restaurante_id?: SortOrder
     pedido_status?: SortOrder
     pedido_valor_total?: SortOrder
     pedido_criacao_pedido?: SortOrder
-    itens?: ItemPedidoOrderByRelationAggregateInput
+    itens?: item_pedidoOrderByRelationAggregateInput
   }
 
-  export type PedidoWhereUniqueInput = Prisma.AtLeast<{
+  export type pedidoWhereUniqueInput = Prisma.AtLeast<{
     pedido_id?: number
-    AND?: PedidoWhereInput | PedidoWhereInput[]
-    OR?: PedidoWhereInput[]
-    NOT?: PedidoWhereInput | PedidoWhereInput[]
-    usuario_id?: IntFilter<"Pedido"> | number
-    restaurante_id?: IntFilter<"Pedido"> | number
-    pedido_status?: IntFilter<"Pedido"> | number
-    pedido_valor_total?: FloatFilter<"Pedido"> | number
-    pedido_criacao_pedido?: DateTimeFilter<"Pedido"> | Date | string
-    itens?: ItemPedidoListRelationFilter
+    AND?: pedidoWhereInput | pedidoWhereInput[]
+    OR?: pedidoWhereInput[]
+    NOT?: pedidoWhereInput | pedidoWhereInput[]
+    usuario_id?: IntFilter<"pedido"> | number
+    restaurante_id?: IntFilter<"pedido"> | number
+    pedido_status?: IntFilter<"pedido"> | number
+    pedido_valor_total?: FloatFilter<"pedido"> | number
+    pedido_criacao_pedido?: DateTimeFilter<"pedido"> | Date | string
+    itens?: Item_pedidoListRelationFilter
   }, "pedido_id">
 
-  export type PedidoOrderByWithAggregationInput = {
+  export type pedidoOrderByWithAggregationInput = {
     pedido_id?: SortOrder
     usuario_id?: SortOrder
     restaurante_id?: SortOrder
     pedido_status?: SortOrder
     pedido_valor_total?: SortOrder
     pedido_criacao_pedido?: SortOrder
-    _count?: PedidoCountOrderByAggregateInput
-    _avg?: PedidoAvgOrderByAggregateInput
-    _max?: PedidoMaxOrderByAggregateInput
-    _min?: PedidoMinOrderByAggregateInput
-    _sum?: PedidoSumOrderByAggregateInput
+    _count?: pedidoCountOrderByAggregateInput
+    _avg?: pedidoAvgOrderByAggregateInput
+    _max?: pedidoMaxOrderByAggregateInput
+    _min?: pedidoMinOrderByAggregateInput
+    _sum?: pedidoSumOrderByAggregateInput
   }
 
-  export type PedidoScalarWhereWithAggregatesInput = {
-    AND?: PedidoScalarWhereWithAggregatesInput | PedidoScalarWhereWithAggregatesInput[]
-    OR?: PedidoScalarWhereWithAggregatesInput[]
-    NOT?: PedidoScalarWhereWithAggregatesInput | PedidoScalarWhereWithAggregatesInput[]
-    pedido_id?: IntWithAggregatesFilter<"Pedido"> | number
-    usuario_id?: IntWithAggregatesFilter<"Pedido"> | number
-    restaurante_id?: IntWithAggregatesFilter<"Pedido"> | number
-    pedido_status?: IntWithAggregatesFilter<"Pedido"> | number
-    pedido_valor_total?: FloatWithAggregatesFilter<"Pedido"> | number
-    pedido_criacao_pedido?: DateTimeWithAggregatesFilter<"Pedido"> | Date | string
+  export type pedidoScalarWhereWithAggregatesInput = {
+    AND?: pedidoScalarWhereWithAggregatesInput | pedidoScalarWhereWithAggregatesInput[]
+    OR?: pedidoScalarWhereWithAggregatesInput[]
+    NOT?: pedidoScalarWhereWithAggregatesInput | pedidoScalarWhereWithAggregatesInput[]
+    pedido_id?: IntWithAggregatesFilter<"pedido"> | number
+    usuario_id?: IntWithAggregatesFilter<"pedido"> | number
+    restaurante_id?: IntWithAggregatesFilter<"pedido"> | number
+    pedido_status?: IntWithAggregatesFilter<"pedido"> | number
+    pedido_valor_total?: FloatWithAggregatesFilter<"pedido"> | number
+    pedido_criacao_pedido?: DateTimeWithAggregatesFilter<"pedido"> | Date | string
   }
 
-  export type ItemPedidoWhereInput = {
-    AND?: ItemPedidoWhereInput | ItemPedidoWhereInput[]
-    OR?: ItemPedidoWhereInput[]
-    NOT?: ItemPedidoWhereInput | ItemPedidoWhereInput[]
-    item_pedido_id?: IntFilter<"ItemPedido"> | number
-    item_pedido_quantidade?: IntFilter<"ItemPedido"> | number
-    item_pedido_preco?: FloatFilter<"ItemPedido"> | number
-    pedido_id?: IntFilter<"ItemPedido"> | number
-    prato_id?: IntFilter<"ItemPedido"> | number
-    pedido?: XOR<PedidoScalarRelationFilter, PedidoWhereInput>
+  export type item_pedidoWhereInput = {
+    AND?: item_pedidoWhereInput | item_pedidoWhereInput[]
+    OR?: item_pedidoWhereInput[]
+    NOT?: item_pedidoWhereInput | item_pedidoWhereInput[]
+    item_pedido_id?: IntFilter<"item_pedido"> | number
+    item_pedido_quantidade?: IntFilter<"item_pedido"> | number
+    item_pedido_preco?: FloatFilter<"item_pedido"> | number
+    pedido_id?: IntFilter<"item_pedido"> | number
+    prato_id?: IntFilter<"item_pedido"> | number
+    pedido?: XOR<PedidoScalarRelationFilter, pedidoWhereInput>
   }
 
-  export type ItemPedidoOrderByWithRelationInput = {
+  export type item_pedidoOrderByWithRelationInput = {
     item_pedido_id?: SortOrder
     item_pedido_quantidade?: SortOrder
     item_pedido_preco?: SortOrder
     pedido_id?: SortOrder
     prato_id?: SortOrder
-    pedido?: PedidoOrderByWithRelationInput
+    pedido?: pedidoOrderByWithRelationInput
   }
 
-  export type ItemPedidoWhereUniqueInput = Prisma.AtLeast<{
+  export type item_pedidoWhereUniqueInput = Prisma.AtLeast<{
     item_pedido_id?: number
-    AND?: ItemPedidoWhereInput | ItemPedidoWhereInput[]
-    OR?: ItemPedidoWhereInput[]
-    NOT?: ItemPedidoWhereInput | ItemPedidoWhereInput[]
-    item_pedido_quantidade?: IntFilter<"ItemPedido"> | number
-    item_pedido_preco?: FloatFilter<"ItemPedido"> | number
-    pedido_id?: IntFilter<"ItemPedido"> | number
-    prato_id?: IntFilter<"ItemPedido"> | number
-    pedido?: XOR<PedidoScalarRelationFilter, PedidoWhereInput>
+    AND?: item_pedidoWhereInput | item_pedidoWhereInput[]
+    OR?: item_pedidoWhereInput[]
+    NOT?: item_pedidoWhereInput | item_pedidoWhereInput[]
+    item_pedido_quantidade?: IntFilter<"item_pedido"> | number
+    item_pedido_preco?: FloatFilter<"item_pedido"> | number
+    pedido_id?: IntFilter<"item_pedido"> | number
+    prato_id?: IntFilter<"item_pedido"> | number
+    pedido?: XOR<PedidoScalarRelationFilter, pedidoWhereInput>
   }, "item_pedido_id">
 
-  export type ItemPedidoOrderByWithAggregationInput = {
+  export type item_pedidoOrderByWithAggregationInput = {
     item_pedido_id?: SortOrder
     item_pedido_quantidade?: SortOrder
     item_pedido_preco?: SortOrder
     pedido_id?: SortOrder
     prato_id?: SortOrder
-    _count?: ItemPedidoCountOrderByAggregateInput
-    _avg?: ItemPedidoAvgOrderByAggregateInput
-    _max?: ItemPedidoMaxOrderByAggregateInput
-    _min?: ItemPedidoMinOrderByAggregateInput
-    _sum?: ItemPedidoSumOrderByAggregateInput
+    _count?: item_pedidoCountOrderByAggregateInput
+    _avg?: item_pedidoAvgOrderByAggregateInput
+    _max?: item_pedidoMaxOrderByAggregateInput
+    _min?: item_pedidoMinOrderByAggregateInput
+    _sum?: item_pedidoSumOrderByAggregateInput
   }
 
-  export type ItemPedidoScalarWhereWithAggregatesInput = {
-    AND?: ItemPedidoScalarWhereWithAggregatesInput | ItemPedidoScalarWhereWithAggregatesInput[]
-    OR?: ItemPedidoScalarWhereWithAggregatesInput[]
-    NOT?: ItemPedidoScalarWhereWithAggregatesInput | ItemPedidoScalarWhereWithAggregatesInput[]
-    item_pedido_id?: IntWithAggregatesFilter<"ItemPedido"> | number
-    item_pedido_quantidade?: IntWithAggregatesFilter<"ItemPedido"> | number
-    item_pedido_preco?: FloatWithAggregatesFilter<"ItemPedido"> | number
-    pedido_id?: IntWithAggregatesFilter<"ItemPedido"> | number
-    prato_id?: IntWithAggregatesFilter<"ItemPedido"> | number
+  export type item_pedidoScalarWhereWithAggregatesInput = {
+    AND?: item_pedidoScalarWhereWithAggregatesInput | item_pedidoScalarWhereWithAggregatesInput[]
+    OR?: item_pedidoScalarWhereWithAggregatesInput[]
+    NOT?: item_pedidoScalarWhereWithAggregatesInput | item_pedidoScalarWhereWithAggregatesInput[]
+    item_pedido_id?: IntWithAggregatesFilter<"item_pedido"> | number
+    item_pedido_quantidade?: IntWithAggregatesFilter<"item_pedido"> | number
+    item_pedido_preco?: FloatWithAggregatesFilter<"item_pedido"> | number
+    pedido_id?: IntWithAggregatesFilter<"item_pedido"> | number
+    prato_id?: IntWithAggregatesFilter<"item_pedido"> | number
   }
 
-  export type PedidoCreateInput = {
+  export type pedidoCreateInput = {
     usuario_id: number
     restaurante_id: number
     pedido_status: number
     pedido_valor_total: number
     pedido_criacao_pedido: Date | string
-    itens?: ItemPedidoCreateNestedManyWithoutPedidoInput
+    itens?: item_pedidoCreateNestedManyWithoutPedidoInput
   }
 
-  export type PedidoUncheckedCreateInput = {
+  export type pedidoUncheckedCreateInput = {
     pedido_id?: number
     usuario_id: number
     restaurante_id: number
     pedido_status: number
     pedido_valor_total: number
     pedido_criacao_pedido: Date | string
-    itens?: ItemPedidoUncheckedCreateNestedManyWithoutPedidoInput
+    itens?: item_pedidoUncheckedCreateNestedManyWithoutPedidoInput
   }
 
-  export type PedidoUpdateInput = {
+  export type pedidoUpdateInput = {
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
     pedido_status?: IntFieldUpdateOperationsInput | number
     pedido_valor_total?: FloatFieldUpdateOperationsInput | number
     pedido_criacao_pedido?: DateTimeFieldUpdateOperationsInput | Date | string
-    itens?: ItemPedidoUpdateManyWithoutPedidoNestedInput
+    itens?: item_pedidoUpdateManyWithoutPedidoNestedInput
   }
 
-  export type PedidoUncheckedUpdateInput = {
+  export type pedidoUncheckedUpdateInput = {
     pedido_id?: IntFieldUpdateOperationsInput | number
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
     pedido_status?: IntFieldUpdateOperationsInput | number
     pedido_valor_total?: FloatFieldUpdateOperationsInput | number
     pedido_criacao_pedido?: DateTimeFieldUpdateOperationsInput | Date | string
-    itens?: ItemPedidoUncheckedUpdateManyWithoutPedidoNestedInput
+    itens?: item_pedidoUncheckedUpdateManyWithoutPedidoNestedInput
   }
 
-  export type PedidoCreateManyInput = {
+  export type pedidoCreateManyInput = {
     pedido_id?: number
     usuario_id: number
     restaurante_id: number
@@ -3201,7 +3201,7 @@ export namespace Prisma {
     pedido_criacao_pedido: Date | string
   }
 
-  export type PedidoUpdateManyMutationInput = {
+  export type pedidoUpdateManyMutationInput = {
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
     pedido_status?: IntFieldUpdateOperationsInput | number
@@ -3209,7 +3209,7 @@ export namespace Prisma {
     pedido_criacao_pedido?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PedidoUncheckedUpdateManyInput = {
+  export type pedidoUncheckedUpdateManyInput = {
     pedido_id?: IntFieldUpdateOperationsInput | number
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
@@ -3218,14 +3218,14 @@ export namespace Prisma {
     pedido_criacao_pedido?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ItemPedidoCreateInput = {
+  export type item_pedidoCreateInput = {
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
-    pedido: PedidoCreateNestedOneWithoutItensInput
+    pedido: pedidoCreateNestedOneWithoutItensInput
   }
 
-  export type ItemPedidoUncheckedCreateInput = {
+  export type item_pedidoUncheckedCreateInput = {
     item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
@@ -3233,14 +3233,14 @@ export namespace Prisma {
     prato_id: number
   }
 
-  export type ItemPedidoUpdateInput = {
+  export type item_pedidoUpdateInput = {
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
     prato_id?: IntFieldUpdateOperationsInput | number
-    pedido?: PedidoUpdateOneRequiredWithoutItensNestedInput
+    pedido?: pedidoUpdateOneRequiredWithoutItensNestedInput
   }
 
-  export type ItemPedidoUncheckedUpdateInput = {
+  export type item_pedidoUncheckedUpdateInput = {
     item_pedido_id?: IntFieldUpdateOperationsInput | number
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
@@ -3248,7 +3248,7 @@ export namespace Prisma {
     prato_id?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ItemPedidoCreateManyInput = {
+  export type item_pedidoCreateManyInput = {
     item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
@@ -3256,13 +3256,13 @@ export namespace Prisma {
     prato_id: number
   }
 
-  export type ItemPedidoUpdateManyMutationInput = {
+  export type item_pedidoUpdateManyMutationInput = {
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
     prato_id?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ItemPedidoUncheckedUpdateManyInput = {
+  export type item_pedidoUncheckedUpdateManyInput = {
     item_pedido_id?: IntFieldUpdateOperationsInput | number
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
@@ -3303,17 +3303,17 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type ItemPedidoListRelationFilter = {
-    every?: ItemPedidoWhereInput
-    some?: ItemPedidoWhereInput
-    none?: ItemPedidoWhereInput
+  export type Item_pedidoListRelationFilter = {
+    every?: item_pedidoWhereInput
+    some?: item_pedidoWhereInput
+    none?: item_pedidoWhereInput
   }
 
-  export type ItemPedidoOrderByRelationAggregateInput = {
+  export type item_pedidoOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type PedidoCountOrderByAggregateInput = {
+  export type pedidoCountOrderByAggregateInput = {
     pedido_id?: SortOrder
     usuario_id?: SortOrder
     restaurante_id?: SortOrder
@@ -3322,7 +3322,7 @@ export namespace Prisma {
     pedido_criacao_pedido?: SortOrder
   }
 
-  export type PedidoAvgOrderByAggregateInput = {
+  export type pedidoAvgOrderByAggregateInput = {
     pedido_id?: SortOrder
     usuario_id?: SortOrder
     restaurante_id?: SortOrder
@@ -3330,16 +3330,7 @@ export namespace Prisma {
     pedido_valor_total?: SortOrder
   }
 
-  export type PedidoMaxOrderByAggregateInput = {
-    pedido_id?: SortOrder
-    usuario_id?: SortOrder
-    restaurante_id?: SortOrder
-    pedido_status?: SortOrder
-    pedido_valor_total?: SortOrder
-    pedido_criacao_pedido?: SortOrder
-  }
-
-  export type PedidoMinOrderByAggregateInput = {
+  export type pedidoMaxOrderByAggregateInput = {
     pedido_id?: SortOrder
     usuario_id?: SortOrder
     restaurante_id?: SortOrder
@@ -3348,7 +3339,16 @@ export namespace Prisma {
     pedido_criacao_pedido?: SortOrder
   }
 
-  export type PedidoSumOrderByAggregateInput = {
+  export type pedidoMinOrderByAggregateInput = {
+    pedido_id?: SortOrder
+    usuario_id?: SortOrder
+    restaurante_id?: SortOrder
+    pedido_status?: SortOrder
+    pedido_valor_total?: SortOrder
+    pedido_criacao_pedido?: SortOrder
+  }
+
+  export type pedidoSumOrderByAggregateInput = {
     pedido_id?: SortOrder
     usuario_id?: SortOrder
     restaurante_id?: SortOrder
@@ -3403,11 +3403,11 @@ export namespace Prisma {
   }
 
   export type PedidoScalarRelationFilter = {
-    is?: PedidoWhereInput
-    isNot?: PedidoWhereInput
+    is?: pedidoWhereInput
+    isNot?: pedidoWhereInput
   }
 
-  export type ItemPedidoCountOrderByAggregateInput = {
+  export type item_pedidoCountOrderByAggregateInput = {
     item_pedido_id?: SortOrder
     item_pedido_quantidade?: SortOrder
     item_pedido_preco?: SortOrder
@@ -3415,7 +3415,7 @@ export namespace Prisma {
     prato_id?: SortOrder
   }
 
-  export type ItemPedidoAvgOrderByAggregateInput = {
+  export type item_pedidoAvgOrderByAggregateInput = {
     item_pedido_id?: SortOrder
     item_pedido_quantidade?: SortOrder
     item_pedido_preco?: SortOrder
@@ -3423,7 +3423,7 @@ export namespace Prisma {
     prato_id?: SortOrder
   }
 
-  export type ItemPedidoMaxOrderByAggregateInput = {
+  export type item_pedidoMaxOrderByAggregateInput = {
     item_pedido_id?: SortOrder
     item_pedido_quantidade?: SortOrder
     item_pedido_preco?: SortOrder
@@ -3431,7 +3431,7 @@ export namespace Prisma {
     prato_id?: SortOrder
   }
 
-  export type ItemPedidoMinOrderByAggregateInput = {
+  export type item_pedidoMinOrderByAggregateInput = {
     item_pedido_id?: SortOrder
     item_pedido_quantidade?: SortOrder
     item_pedido_preco?: SortOrder
@@ -3439,7 +3439,7 @@ export namespace Prisma {
     prato_id?: SortOrder
   }
 
-  export type ItemPedidoSumOrderByAggregateInput = {
+  export type item_pedidoSumOrderByAggregateInput = {
     item_pedido_id?: SortOrder
     item_pedido_quantidade?: SortOrder
     item_pedido_preco?: SortOrder
@@ -3447,18 +3447,18 @@ export namespace Prisma {
     prato_id?: SortOrder
   }
 
-  export type ItemPedidoCreateNestedManyWithoutPedidoInput = {
-    create?: XOR<ItemPedidoCreateWithoutPedidoInput, ItemPedidoUncheckedCreateWithoutPedidoInput> | ItemPedidoCreateWithoutPedidoInput[] | ItemPedidoUncheckedCreateWithoutPedidoInput[]
-    connectOrCreate?: ItemPedidoCreateOrConnectWithoutPedidoInput | ItemPedidoCreateOrConnectWithoutPedidoInput[]
-    createMany?: ItemPedidoCreateManyPedidoInputEnvelope
-    connect?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
+  export type item_pedidoCreateNestedManyWithoutPedidoInput = {
+    create?: XOR<item_pedidoCreateWithoutPedidoInput, item_pedidoUncheckedCreateWithoutPedidoInput> | item_pedidoCreateWithoutPedidoInput[] | item_pedidoUncheckedCreateWithoutPedidoInput[]
+    connectOrCreate?: item_pedidoCreateOrConnectWithoutPedidoInput | item_pedidoCreateOrConnectWithoutPedidoInput[]
+    createMany?: item_pedidoCreateManyPedidoInputEnvelope
+    connect?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
   }
 
-  export type ItemPedidoUncheckedCreateNestedManyWithoutPedidoInput = {
-    create?: XOR<ItemPedidoCreateWithoutPedidoInput, ItemPedidoUncheckedCreateWithoutPedidoInput> | ItemPedidoCreateWithoutPedidoInput[] | ItemPedidoUncheckedCreateWithoutPedidoInput[]
-    connectOrCreate?: ItemPedidoCreateOrConnectWithoutPedidoInput | ItemPedidoCreateOrConnectWithoutPedidoInput[]
-    createMany?: ItemPedidoCreateManyPedidoInputEnvelope
-    connect?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
+  export type item_pedidoUncheckedCreateNestedManyWithoutPedidoInput = {
+    create?: XOR<item_pedidoCreateWithoutPedidoInput, item_pedidoUncheckedCreateWithoutPedidoInput> | item_pedidoCreateWithoutPedidoInput[] | item_pedidoUncheckedCreateWithoutPedidoInput[]
+    connectOrCreate?: item_pedidoCreateOrConnectWithoutPedidoInput | item_pedidoCreateOrConnectWithoutPedidoInput[]
+    createMany?: item_pedidoCreateManyPedidoInputEnvelope
+    connect?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -3481,46 +3481,46 @@ export namespace Prisma {
     set?: Date | string
   }
 
-  export type ItemPedidoUpdateManyWithoutPedidoNestedInput = {
-    create?: XOR<ItemPedidoCreateWithoutPedidoInput, ItemPedidoUncheckedCreateWithoutPedidoInput> | ItemPedidoCreateWithoutPedidoInput[] | ItemPedidoUncheckedCreateWithoutPedidoInput[]
-    connectOrCreate?: ItemPedidoCreateOrConnectWithoutPedidoInput | ItemPedidoCreateOrConnectWithoutPedidoInput[]
-    upsert?: ItemPedidoUpsertWithWhereUniqueWithoutPedidoInput | ItemPedidoUpsertWithWhereUniqueWithoutPedidoInput[]
-    createMany?: ItemPedidoCreateManyPedidoInputEnvelope
-    set?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    disconnect?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    delete?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    connect?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    update?: ItemPedidoUpdateWithWhereUniqueWithoutPedidoInput | ItemPedidoUpdateWithWhereUniqueWithoutPedidoInput[]
-    updateMany?: ItemPedidoUpdateManyWithWhereWithoutPedidoInput | ItemPedidoUpdateManyWithWhereWithoutPedidoInput[]
-    deleteMany?: ItemPedidoScalarWhereInput | ItemPedidoScalarWhereInput[]
+  export type item_pedidoUpdateManyWithoutPedidoNestedInput = {
+    create?: XOR<item_pedidoCreateWithoutPedidoInput, item_pedidoUncheckedCreateWithoutPedidoInput> | item_pedidoCreateWithoutPedidoInput[] | item_pedidoUncheckedCreateWithoutPedidoInput[]
+    connectOrCreate?: item_pedidoCreateOrConnectWithoutPedidoInput | item_pedidoCreateOrConnectWithoutPedidoInput[]
+    upsert?: item_pedidoUpsertWithWhereUniqueWithoutPedidoInput | item_pedidoUpsertWithWhereUniqueWithoutPedidoInput[]
+    createMany?: item_pedidoCreateManyPedidoInputEnvelope
+    set?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    disconnect?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    delete?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    connect?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    update?: item_pedidoUpdateWithWhereUniqueWithoutPedidoInput | item_pedidoUpdateWithWhereUniqueWithoutPedidoInput[]
+    updateMany?: item_pedidoUpdateManyWithWhereWithoutPedidoInput | item_pedidoUpdateManyWithWhereWithoutPedidoInput[]
+    deleteMany?: item_pedidoScalarWhereInput | item_pedidoScalarWhereInput[]
   }
 
-  export type ItemPedidoUncheckedUpdateManyWithoutPedidoNestedInput = {
-    create?: XOR<ItemPedidoCreateWithoutPedidoInput, ItemPedidoUncheckedCreateWithoutPedidoInput> | ItemPedidoCreateWithoutPedidoInput[] | ItemPedidoUncheckedCreateWithoutPedidoInput[]
-    connectOrCreate?: ItemPedidoCreateOrConnectWithoutPedidoInput | ItemPedidoCreateOrConnectWithoutPedidoInput[]
-    upsert?: ItemPedidoUpsertWithWhereUniqueWithoutPedidoInput | ItemPedidoUpsertWithWhereUniqueWithoutPedidoInput[]
-    createMany?: ItemPedidoCreateManyPedidoInputEnvelope
-    set?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    disconnect?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    delete?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    connect?: ItemPedidoWhereUniqueInput | ItemPedidoWhereUniqueInput[]
-    update?: ItemPedidoUpdateWithWhereUniqueWithoutPedidoInput | ItemPedidoUpdateWithWhereUniqueWithoutPedidoInput[]
-    updateMany?: ItemPedidoUpdateManyWithWhereWithoutPedidoInput | ItemPedidoUpdateManyWithWhereWithoutPedidoInput[]
-    deleteMany?: ItemPedidoScalarWhereInput | ItemPedidoScalarWhereInput[]
+  export type item_pedidoUncheckedUpdateManyWithoutPedidoNestedInput = {
+    create?: XOR<item_pedidoCreateWithoutPedidoInput, item_pedidoUncheckedCreateWithoutPedidoInput> | item_pedidoCreateWithoutPedidoInput[] | item_pedidoUncheckedCreateWithoutPedidoInput[]
+    connectOrCreate?: item_pedidoCreateOrConnectWithoutPedidoInput | item_pedidoCreateOrConnectWithoutPedidoInput[]
+    upsert?: item_pedidoUpsertWithWhereUniqueWithoutPedidoInput | item_pedidoUpsertWithWhereUniqueWithoutPedidoInput[]
+    createMany?: item_pedidoCreateManyPedidoInputEnvelope
+    set?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    disconnect?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    delete?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    connect?: item_pedidoWhereUniqueInput | item_pedidoWhereUniqueInput[]
+    update?: item_pedidoUpdateWithWhereUniqueWithoutPedidoInput | item_pedidoUpdateWithWhereUniqueWithoutPedidoInput[]
+    updateMany?: item_pedidoUpdateManyWithWhereWithoutPedidoInput | item_pedidoUpdateManyWithWhereWithoutPedidoInput[]
+    deleteMany?: item_pedidoScalarWhereInput | item_pedidoScalarWhereInput[]
   }
 
-  export type PedidoCreateNestedOneWithoutItensInput = {
-    create?: XOR<PedidoCreateWithoutItensInput, PedidoUncheckedCreateWithoutItensInput>
-    connectOrCreate?: PedidoCreateOrConnectWithoutItensInput
-    connect?: PedidoWhereUniqueInput
+  export type pedidoCreateNestedOneWithoutItensInput = {
+    create?: XOR<pedidoCreateWithoutItensInput, pedidoUncheckedCreateWithoutItensInput>
+    connectOrCreate?: pedidoCreateOrConnectWithoutItensInput
+    connect?: pedidoWhereUniqueInput
   }
 
-  export type PedidoUpdateOneRequiredWithoutItensNestedInput = {
-    create?: XOR<PedidoCreateWithoutItensInput, PedidoUncheckedCreateWithoutItensInput>
-    connectOrCreate?: PedidoCreateOrConnectWithoutItensInput
-    upsert?: PedidoUpsertWithoutItensInput
-    connect?: PedidoWhereUniqueInput
-    update?: XOR<XOR<PedidoUpdateToOneWithWhereWithoutItensInput, PedidoUpdateWithoutItensInput>, PedidoUncheckedUpdateWithoutItensInput>
+  export type pedidoUpdateOneRequiredWithoutItensNestedInput = {
+    create?: XOR<pedidoCreateWithoutItensInput, pedidoUncheckedCreateWithoutItensInput>
+    connectOrCreate?: pedidoCreateOrConnectWithoutItensInput
+    upsert?: pedidoUpsertWithoutItensInput
+    connect?: pedidoWhereUniqueInput
+    update?: XOR<XOR<pedidoUpdateToOneWithWhereWithoutItensInput, pedidoUpdateWithoutItensInput>, pedidoUncheckedUpdateWithoutItensInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3602,57 +3602,57 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type ItemPedidoCreateWithoutPedidoInput = {
+  export type item_pedidoCreateWithoutPedidoInput = {
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
   }
 
-  export type ItemPedidoUncheckedCreateWithoutPedidoInput = {
+  export type item_pedidoUncheckedCreateWithoutPedidoInput = {
     item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
   }
 
-  export type ItemPedidoCreateOrConnectWithoutPedidoInput = {
-    where: ItemPedidoWhereUniqueInput
-    create: XOR<ItemPedidoCreateWithoutPedidoInput, ItemPedidoUncheckedCreateWithoutPedidoInput>
+  export type item_pedidoCreateOrConnectWithoutPedidoInput = {
+    where: item_pedidoWhereUniqueInput
+    create: XOR<item_pedidoCreateWithoutPedidoInput, item_pedidoUncheckedCreateWithoutPedidoInput>
   }
 
-  export type ItemPedidoCreateManyPedidoInputEnvelope = {
-    data: ItemPedidoCreateManyPedidoInput | ItemPedidoCreateManyPedidoInput[]
+  export type item_pedidoCreateManyPedidoInputEnvelope = {
+    data: item_pedidoCreateManyPedidoInput | item_pedidoCreateManyPedidoInput[]
     skipDuplicates?: boolean
   }
 
-  export type ItemPedidoUpsertWithWhereUniqueWithoutPedidoInput = {
-    where: ItemPedidoWhereUniqueInput
-    update: XOR<ItemPedidoUpdateWithoutPedidoInput, ItemPedidoUncheckedUpdateWithoutPedidoInput>
-    create: XOR<ItemPedidoCreateWithoutPedidoInput, ItemPedidoUncheckedCreateWithoutPedidoInput>
+  export type item_pedidoUpsertWithWhereUniqueWithoutPedidoInput = {
+    where: item_pedidoWhereUniqueInput
+    update: XOR<item_pedidoUpdateWithoutPedidoInput, item_pedidoUncheckedUpdateWithoutPedidoInput>
+    create: XOR<item_pedidoCreateWithoutPedidoInput, item_pedidoUncheckedCreateWithoutPedidoInput>
   }
 
-  export type ItemPedidoUpdateWithWhereUniqueWithoutPedidoInput = {
-    where: ItemPedidoWhereUniqueInput
-    data: XOR<ItemPedidoUpdateWithoutPedidoInput, ItemPedidoUncheckedUpdateWithoutPedidoInput>
+  export type item_pedidoUpdateWithWhereUniqueWithoutPedidoInput = {
+    where: item_pedidoWhereUniqueInput
+    data: XOR<item_pedidoUpdateWithoutPedidoInput, item_pedidoUncheckedUpdateWithoutPedidoInput>
   }
 
-  export type ItemPedidoUpdateManyWithWhereWithoutPedidoInput = {
-    where: ItemPedidoScalarWhereInput
-    data: XOR<ItemPedidoUpdateManyMutationInput, ItemPedidoUncheckedUpdateManyWithoutPedidoInput>
+  export type item_pedidoUpdateManyWithWhereWithoutPedidoInput = {
+    where: item_pedidoScalarWhereInput
+    data: XOR<item_pedidoUpdateManyMutationInput, item_pedidoUncheckedUpdateManyWithoutPedidoInput>
   }
 
-  export type ItemPedidoScalarWhereInput = {
-    AND?: ItemPedidoScalarWhereInput | ItemPedidoScalarWhereInput[]
-    OR?: ItemPedidoScalarWhereInput[]
-    NOT?: ItemPedidoScalarWhereInput | ItemPedidoScalarWhereInput[]
-    item_pedido_id?: IntFilter<"ItemPedido"> | number
-    item_pedido_quantidade?: IntFilter<"ItemPedido"> | number
-    item_pedido_preco?: FloatFilter<"ItemPedido"> | number
-    pedido_id?: IntFilter<"ItemPedido"> | number
-    prato_id?: IntFilter<"ItemPedido"> | number
+  export type item_pedidoScalarWhereInput = {
+    AND?: item_pedidoScalarWhereInput | item_pedidoScalarWhereInput[]
+    OR?: item_pedidoScalarWhereInput[]
+    NOT?: item_pedidoScalarWhereInput | item_pedidoScalarWhereInput[]
+    item_pedido_id?: IntFilter<"item_pedido"> | number
+    item_pedido_quantidade?: IntFilter<"item_pedido"> | number
+    item_pedido_preco?: FloatFilter<"item_pedido"> | number
+    pedido_id?: IntFilter<"item_pedido"> | number
+    prato_id?: IntFilter<"item_pedido"> | number
   }
 
-  export type PedidoCreateWithoutItensInput = {
+  export type pedidoCreateWithoutItensInput = {
     usuario_id: number
     restaurante_id: number
     pedido_status: number
@@ -3660,7 +3660,7 @@ export namespace Prisma {
     pedido_criacao_pedido: Date | string
   }
 
-  export type PedidoUncheckedCreateWithoutItensInput = {
+  export type pedidoUncheckedCreateWithoutItensInput = {
     pedido_id?: number
     usuario_id: number
     restaurante_id: number
@@ -3669,23 +3669,23 @@ export namespace Prisma {
     pedido_criacao_pedido: Date | string
   }
 
-  export type PedidoCreateOrConnectWithoutItensInput = {
-    where: PedidoWhereUniqueInput
-    create: XOR<PedidoCreateWithoutItensInput, PedidoUncheckedCreateWithoutItensInput>
+  export type pedidoCreateOrConnectWithoutItensInput = {
+    where: pedidoWhereUniqueInput
+    create: XOR<pedidoCreateWithoutItensInput, pedidoUncheckedCreateWithoutItensInput>
   }
 
-  export type PedidoUpsertWithoutItensInput = {
-    update: XOR<PedidoUpdateWithoutItensInput, PedidoUncheckedUpdateWithoutItensInput>
-    create: XOR<PedidoCreateWithoutItensInput, PedidoUncheckedCreateWithoutItensInput>
-    where?: PedidoWhereInput
+  export type pedidoUpsertWithoutItensInput = {
+    update: XOR<pedidoUpdateWithoutItensInput, pedidoUncheckedUpdateWithoutItensInput>
+    create: XOR<pedidoCreateWithoutItensInput, pedidoUncheckedCreateWithoutItensInput>
+    where?: pedidoWhereInput
   }
 
-  export type PedidoUpdateToOneWithWhereWithoutItensInput = {
-    where?: PedidoWhereInput
-    data: XOR<PedidoUpdateWithoutItensInput, PedidoUncheckedUpdateWithoutItensInput>
+  export type pedidoUpdateToOneWithWhereWithoutItensInput = {
+    where?: pedidoWhereInput
+    data: XOR<pedidoUpdateWithoutItensInput, pedidoUncheckedUpdateWithoutItensInput>
   }
 
-  export type PedidoUpdateWithoutItensInput = {
+  export type pedidoUpdateWithoutItensInput = {
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
     pedido_status?: IntFieldUpdateOperationsInput | number
@@ -3693,7 +3693,7 @@ export namespace Prisma {
     pedido_criacao_pedido?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PedidoUncheckedUpdateWithoutItensInput = {
+  export type pedidoUncheckedUpdateWithoutItensInput = {
     pedido_id?: IntFieldUpdateOperationsInput | number
     usuario_id?: IntFieldUpdateOperationsInput | number
     restaurante_id?: IntFieldUpdateOperationsInput | number
@@ -3702,27 +3702,27 @@ export namespace Prisma {
     pedido_criacao_pedido?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ItemPedidoCreateManyPedidoInput = {
+  export type item_pedidoCreateManyPedidoInput = {
     item_pedido_id?: number
     item_pedido_quantidade: number
     item_pedido_preco: number
     prato_id: number
   }
 
-  export type ItemPedidoUpdateWithoutPedidoInput = {
+  export type item_pedidoUpdateWithoutPedidoInput = {
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
     prato_id?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ItemPedidoUncheckedUpdateWithoutPedidoInput = {
+  export type item_pedidoUncheckedUpdateWithoutPedidoInput = {
     item_pedido_id?: IntFieldUpdateOperationsInput | number
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number
     prato_id?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ItemPedidoUncheckedUpdateManyWithoutPedidoInput = {
+  export type item_pedidoUncheckedUpdateManyWithoutPedidoInput = {
     item_pedido_id?: IntFieldUpdateOperationsInput | number
     item_pedido_quantidade?: IntFieldUpdateOperationsInput | number
     item_pedido_preco?: FloatFieldUpdateOperationsInput | number

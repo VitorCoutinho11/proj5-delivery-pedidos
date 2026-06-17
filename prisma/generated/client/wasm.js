@@ -102,7 +102,7 @@ exports.Prisma.PedidoScalarFieldEnum = {
   pedido_criacao_pedido: 'pedido_criacao_pedido'
 };
 
-exports.Prisma.ItemPedidoScalarFieldEnum = {
+exports.Prisma.Item_pedidoScalarFieldEnum = {
   item_pedido_id: 'item_pedido_id',
   item_pedido_quantidade: 'item_pedido_quantidade',
   item_pedido_preco: 'item_pedido_preco',
@@ -117,8 +117,8 @@ exports.Prisma.SortOrder = {
 
 
 exports.Prisma.ModelName = {
-  Pedido: 'Pedido',
-  ItemPedido: 'ItemPedido'
+  pedido: 'pedido',
+  item_pedido: 'item_pedido'
 };
 /**
  * Create the Client
@@ -172,13 +172,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated/client\"\n  binaryTargets = [\"native\", \"linux-musl-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Pedido {\n  pedido_id             Int      @id @default(autoincrement())\n  usuario_id            Int\n  restaurante_id        Int\n  pedido_status         Int\n  pedido_valor_total    Float\n  pedido_criacao_pedido DateTime\n\n  itens ItemPedido[]\n\n  @@map(\"pedido\")\n}\n\nmodel ItemPedido {\n  item_pedido_id         Int   @id @default(autoincrement())\n  item_pedido_quantidade Int\n  item_pedido_preco      Float\n  pedido_id              Int\n  prato_id               Int\n\n  pedido Pedido @relation(fields: [pedido_id], references: [pedido_id])\n\n  @@map(\"item_pedido\")\n}\n",
-  "inlineSchemaHash": "07fb0a0e0d5fe94cb5a62a1c0b6f42b7ffc6c225d5312708f7b0a3a175ebff3b",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated/client\"\n  binaryTargets = [\"native\", \"linux-musl-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel pedido {\n  pedido_id             Int      @id @default(autoincrement())\n  usuario_id            Int\n  restaurante_id        Int\n  pedido_status         Int\n  pedido_valor_total    Float\n  pedido_criacao_pedido DateTime\n\n  itens item_pedido[]\n\n  @@map(\"pedido\")\n}\n\nmodel item_pedido {\n  item_pedido_id         Int   @id @default(autoincrement())\n  item_pedido_quantidade Int\n  item_pedido_preco      Float\n  pedido_id              Int\n  prato_id               Int\n\n  pedido pedido @relation(fields: [pedido_id], references: [pedido_id])\n\n  @@map(\"item_pedido\")\n}\n",
+  "inlineSchemaHash": "26eebf47d8e31432cad07557ba2875b6a4ea03e5739e5cf7457a74e863c12ef5",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Pedido\":{\"fields\":[{\"name\":\"pedido_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"usuario_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"restaurante_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"pedido_status\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"pedido_valor_total\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"pedido_criacao_pedido\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"itens\",\"kind\":\"object\",\"type\":\"ItemPedido\",\"relationName\":\"ItemPedidoToPedido\"}],\"dbName\":\"pedido\"},\"ItemPedido\":{\"fields\":[{\"name\":\"item_pedido_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"item_pedido_quantidade\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"item_pedido_preco\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"pedido_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"prato_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"pedido\",\"kind\":\"object\",\"type\":\"Pedido\",\"relationName\":\"ItemPedidoToPedido\"}],\"dbName\":\"item_pedido\"}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"pedido\":{\"fields\":[{\"name\":\"pedido_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"usuario_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"restaurante_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"pedido_status\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"pedido_valor_total\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"pedido_criacao_pedido\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"itens\",\"kind\":\"object\",\"type\":\"item_pedido\",\"relationName\":\"item_pedidoTopedido\"}],\"dbName\":\"pedido\"},\"item_pedido\":{\"fields\":[{\"name\":\"item_pedido_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"item_pedido_quantidade\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"item_pedido_preco\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"pedido_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"prato_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"pedido\",\"kind\":\"object\",\"type\":\"pedido\",\"relationName\":\"item_pedidoTopedido\"}],\"dbName\":\"item_pedido\"}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),
