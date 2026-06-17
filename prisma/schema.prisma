@@ -28,7 +28,7 @@ model pedido {
   @@map("pedido")
 }
 
-model Itempedido {
+model item_pedido {
   item_pedido_id         Int           @id @default(autoincrement()) 
   item_pedido_quantidade Int
   item_pedido_preco      Float
