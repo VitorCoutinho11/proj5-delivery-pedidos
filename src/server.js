@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: require("path").resolve(__dirname, "../.env") });
 const restify = require("restify");
 const PedidosController = require("./controllers/pedidos.controller");
 const { connectRabbitMQ } = require("./config/rabbitmq");
