@@ -1,3 +1,4 @@
+require("dotenv").config();
 const restify = require("restify");
 const PedidosController = require("./controllers/pedidos.controller");
 const { connectRabbitMQ } = require("./config/rabbitmq");
