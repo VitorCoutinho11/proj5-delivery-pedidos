@@ -2,19 +2,22 @@
 FROM node:22-slim AS builder
 
 # Instala o OpenSSL necessário para o Prisma gerar os artefatos corretamente
-RUN apt-get update -y && apt-get install -y openssl
+RUN apt-get update -y && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Instala dependências (apenas arquivos de manifest primeiro para cache)
+# Copia arquivos de manifest e esquema do prisma primeiro para aproveitar o cache de dependências
 COPY package*.json ./
-RUN npm ci --omit=dev
+COPY prisma ./prisma/
 
-# Copia o restante do código
-COPY . .
+# Instala todas as dependências (incluindo devDependencies como o prisma CLI)
+RUN npm ci
 
-# Gera o Prisma Client
+# Gera o Prisma Client (usando o prisma CLI local já instalado em node_modules, sem downloads redundantes)
 RUN npx prisma generate
+
+# Remove as dependências de desenvolvimento para que o node_modules final fique leve
+RUN npm prune --production
 
 # ─── Imagem final (menor) ─────────────────────────────────────────────────────
 FROM node:22-slim
@@ -26,9 +29,11 @@ WORKDIR /app
 
 # Copia artefatos do estágio de build
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/src ./src
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package.json ./package.json
+
+# Copia apenas o código fonte da aplicação por último (evita invalidar o cache das etapas anteriores)
+COPY src ./src
 
 # Porta exposta
 ENV PORT=9523
