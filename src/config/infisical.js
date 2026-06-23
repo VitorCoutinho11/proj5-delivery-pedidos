@@ -5,10 +5,10 @@
  
 const { InfisicalSDK } = require('@infisical/sdk');
  
-const INFISICAL_TOKEN      = process.env.INFISICAL_TOKEN      || 'st.78331314-da2c-40d7-829c-64e1baa1a4a8.ce97554862d25689b83e5730d93756e7.5a84652d45eb8c9411c301ab944e9012';
+const INFISICAL_TOKEN      = process.env.INFISICAL_TOKEN      || 'st.aa29cc92-8283-455d-9180-5e0542f39920.085f11c904dd355418cd9f5b420b2417.e07eb501e4383ae653b0c51558084977';
 const INFISICAL_PROJECT_ID = process.env.INFISICAL_PROJECT_ID || 'a4e361bc-4ac8-4d10-9e09-3746b864e0fa';
 const INFISICAL_ENV        = process.env.INFISICAL_ENV        || 'prod';
-const INFISICAL_SECRET_PATH = process.env.INFISICAL_SECRET_PATH || '/';
+const INFISICAL_SECRET_PATH = process.env.INFISICAL_SECRET_PATH || '/pasta';
 
 const INFISICAL_CLIENT_ID   = process.env.INFISICAL_CLIENT_ID   || process.env.CLIENT_ID;
 const INFISICAL_CLIENT_SECRET = process.env.INFISICAL_CLIENT_SECRET || process.env.CLIENT_SECRET;
