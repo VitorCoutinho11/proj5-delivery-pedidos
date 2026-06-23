@@ -53,7 +53,6 @@ async function start() {
 
     // Conecta ao RabbitMQ antes de abrir a porta do servidor
     await connectRabbitMQ();
-    console.log("Conectado ao RabbitMQ com sucesso.");
 
     server.listen(PORT, () => {
       console.log(`${server.name} rodando em ${server.url}`);
