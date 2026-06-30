@@ -182,9 +182,57 @@ async function deletar(req, res) {
   }
 }
 
+// BUSCAR PEDIDOS POR USUARIO ID
+async function buscarPorUsuarioId(req, res) {
+  try {
+    const { id } = req.params;
+
+    const pedidos = await prisma.pedido.findMany({
+      where: {
+        usuario_id: Number(id)
+      },
+      include: {
+        itens: true
+      }
+    });
+
+    return res.send(200, pedidos);
+  } catch (error) {
+    return res.send(500, {
+      erro: "Erro ao buscar pedidos por usuário",
+      detalhes: error.message
+    });
+  }
+}
+
+// BUSCAR PEDIDOS POR RESTAURANTE ID
+async function buscarPorRestauranteId(req, res) {
+  try {
+    const { id } = req.params;
+
+    const pedidos = await prisma.pedido.findMany({
+      where: {
+        restaurante_id: Number(id)
+      },
+      include: {
+        itens: true
+      }
+    });
+
+    return res.send(200, pedidos);
+  } catch (error) {
+    return res.send(500, {
+      erro: "Erro ao buscar pedidos por restaurante",
+      detalhes: error.message
+    });
+  }
+}
+
 module.exports = {
   listar,
   buscarPorId,
+  buscarPorUsuarioId,
+  buscarPorRestauranteId,
   criar,
   atualizar,
   deletar
