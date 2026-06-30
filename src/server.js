@@ -11,12 +11,32 @@ const server = restify.createServer({
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
+/* ------------------------------------------------------------------ */
+/* CORS — libera o front-end (localhost e SENAC) a acessar a API.      */
+/*                                                                     */
+/* Usamos server.pre (não server.use) porque o pre roda ANTES do       */
+/* roteamento. O navegador dispara um preflight OPTIONS antes do        */
+/* POST/PATCH/DELETE; como não existe rota OPTIONS registrada, sem isto  */
+/* o Restify responderia 405 e o navegador bloquearia a chamada.       */
+/* Aqui o OPTIONS é respondido na hora com 200 + os headers.           */
+/* ------------------------------------------------------------------ */
+server.pre((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  if (req.method === "OPTIONS") {
+    res.send(200);
+    return;
+  }
+  return next();
+});
+
 /* Rota de Healthcheck para o Docker / Jenkins */
 server.get("/health", (req, res, next) => {
-  res.send(200, { 
-    status: "UP", 
+  res.send(200, {
+    status: "UP",
     timestamp: new Date(),
-    uptime: process.uptime() 
+    uptime: process.uptime()
   });
   return next();
 });
@@ -50,10 +70,8 @@ async function start() {
   try {
     // Carrega variáveis do Infisical primeiro
     await loadSecrets();
-
     // Conecta ao RabbitMQ antes de abrir a porta do servidor
     await connectRabbitMQ();
-
     server.listen(PORT, () => {
       console.log(`${server.name} rodando em ${server.url}`);
     });
