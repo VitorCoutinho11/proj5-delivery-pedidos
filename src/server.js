@@ -52,8 +52,8 @@ if (PedidosController) {
   if (typeof PedidosController.deletar === "function") {
     server.del("/pedidos/:id", PedidosController.deletar);
   }
-  if (typeof PedidosController.buscarPorRestauranteIdId === "function") {
-    server.get("/pedidos/restaurante/:id", PedidosController.buscarPorRestauranteIdId);
+  if (typeof PedidosController.buscarPorRestauranteId === "function") {
+    server.get("/pedidos/restaurante/:id", PedidosController.buscarPorRestauranteId);
   }
   if (typeof PedidosController.buscarPorUsuarioId === "function") {
     server.get("/pedidos/usuario/:id", PedidosController.buscarPorUsuarioId);
