@@ -55,8 +55,8 @@ if (PedidosController) {
   if (typeof PedidosController.buscarPorRestauranteIdId === "function") {
     server.get("/pedidos/restaurante/:id", PedidosController.buscarPorRestauranteIdId);
   }
-  if (typeof PedidosController.buscarPorUsuarioIdId === "function") {
-    server.get("/pedidos/usuario/:id", PedidosController.buscarPorUsuarioIdId);
+  if (typeof PedidosController.buscarPorUsuarioId === "function") {
+    server.get("/pedidos/usuario/:id", PedidosController.buscarPorUsuarioId);
   }
 } else {
   console.error("Erro Crítico: PedidosController não foi importado corretamente.");
