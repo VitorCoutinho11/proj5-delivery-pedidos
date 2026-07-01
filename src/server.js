@@ -11,15 +11,7 @@ const server = restify.createServer({
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
-/* ------------------------------------------------------------------ */
-/* CORS — libera o front-end (localhost e SENAC) a acessar a API.      */
-/*                                                                     */
-/* Usamos server.pre (não server.use) porque o pre roda ANTES do       */
-/* roteamento. O navegador dispara um preflight OPTIONS antes do        */
-/* POST/PATCH/DELETE; como não existe rota OPTIONS registrada, sem isto  */
-/* o Restify responderia 405 e o navegador bloquearia a chamada.       */
-/* Aqui o OPTIONS é respondido na hora com 200 + os headers.           */
-/* ------------------------------------------------------------------ */
+
 server.pre((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
@@ -59,6 +51,12 @@ if (PedidosController) {
   }
   if (typeof PedidosController.deletar === "function") {
     server.del("/pedidos/:id", PedidosController.deletar);
+  }
+  if (typeof PedidosController.buscarPorRestauranteIdId === "function") {
+    server.get("/pedidos/:id", PedidosController.buscarPorRestauranteIdId);
+  }
+  if (typeof PedidosController.buscarPorUsuarioIdId === "function") {
+    server.get("/pedidos/:id", PedidosController.buscarPorUsuarioIdId);
   }
 } else {
   console.error("Erro Crítico: PedidosController não foi importado corretamente.");
