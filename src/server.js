@@ -3,7 +3,7 @@ const restify = require("restify");
 const PedidosController = require("./controllers/pedidos.controller");
 const { connectRabbitMQ } = require("./config/rabbitmq");
 const { loadSecrets } = require("./config/infisical");
-const { authenticateToken } = require("./middlewares/authenticateToken");
+const { authenticateToken } = require("./middleware/authenticateToken");
 const server = restify.createServer({
   name: "api-pedidos-restify"
 });

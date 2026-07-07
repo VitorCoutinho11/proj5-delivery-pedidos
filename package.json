@@ -17,6 +17,7 @@
     "axios": "^1.6.0",
     "dotenv": "^16.4.5",
     "infisical-node": "^1.5.1",
+    "jsonwebtoken": "^9.0.3",
     "node-fetch": "^3.3.2",
     "restify": "^11.1.0"
   },
