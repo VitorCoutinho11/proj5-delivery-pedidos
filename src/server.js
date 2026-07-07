@@ -3,7 +3,7 @@ const restify = require("restify");
 const PedidosController = require("./controllers/pedidos.controller");
 const { connectRabbitMQ } = require("./config/rabbitmq");
 const { loadSecrets } = require("./config/infisical");
-
+const { authenticateToken } = require("./middlewares/authenticateToken");
 const server = restify.createServer({
   name: "api-pedidos-restify"
 });
@@ -36,27 +36,27 @@ server.get("/health", (req, res, next) => {
 /* Mapeamento de Rotas com Validação Segura */
 if (PedidosController) {
   if (typeof PedidosController.listar === "function") {
-    server.get("/pedidos", PedidosController.listar);
+    server.get("/pedidos",authenticateToken, PedidosController.listar);
   }
   if (typeof PedidosController.buscarPorId === "function") {
-    server.get("/pedidos/:id", PedidosController.buscarPorId);
+    server.get("/pedidos/:id",authenticateToken, PedidosController.buscarPorId);
   }
   if (typeof PedidosController.criar === "function") {
-    server.post("/pedidos", PedidosController.criar);
+    server.post("/pedidos",authenticateToken, PedidosController.criar);
   }
   if (typeof PedidosController.atualizar === "function") {
-    server.patch("/pedidos/:id", PedidosController.atualizar);
+    server.patch("/pedidos/:id",authenticateToken, PedidosController.atualizar);
   } else {
     console.warn("Aviso: O método 'atualizar' não foi encontrado no PedidosController.");
   }
   if (typeof PedidosController.deletar === "function") {
-    server.del("/pedidos/:id", PedidosController.deletar);
+    server.del("/pedidos/:id",authenticateToken, PedidosController.deletar);
   }
   if (typeof PedidosController.buscarPorRestauranteId === "function") {
-    server.get("/pedidos/restaurante/:id", PedidosController.buscarPorRestauranteId);
+    server.get("/pedidos/restaurante/:id",authenticateToken, PedidosController.buscarPorRestauranteId);
   }
   if (typeof PedidosController.buscarPorUsuarioId === "function") {
-    server.get("/pedidos/usuario/:id", PedidosController.buscarPorUsuarioId);
+    server.get("/pedidos/usuario/:id",authenticateToken, PedidosController.buscarPorUsuarioId);
   }
 } else {
   console.error("Erro Crítico: PedidosController não foi importado corretamente.");
